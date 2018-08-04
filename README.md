@@ -5,7 +5,7 @@ a simple, quick grade calculator for professors
 
 <a href="http://rgbstudios.org/grade-calc">rgbstudios.org/grade-calc</a>
 
-<img src="screenshot.png">
+<img src="screenshot.png" width="960px">
 
 <hr>
 
