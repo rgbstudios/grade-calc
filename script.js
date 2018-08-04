@@ -245,7 +245,7 @@ function getFormattedDate() {
 
 //https://www.thewebflash.com/toggling-fullscreen-mode-using-the-html5-fullscreen-api/
 document.getElementById("fullscreen").onclick = function() {
-	let elem = elem || document.documentElement;
+	let elem = document.documentElement;
 	if (!document.fullscreenElement && !document.mozFullScreenElement &&
 		!document.webkitFullscreenElement && !document.msFullscreenElement) {
 		if (elem.requestFullscreen) {
