@@ -1,0 +1,3 @@
+move assets in folders
+update pixel logo with vector colors
+create vector for simple logo

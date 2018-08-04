@@ -62,7 +62,7 @@ function makeNewDiv() {
 
 	let breakP = document.createElement("p");
 	breakP.innerHTML = "&nbsp;|&nbsp;"; //space bar space
-	breakP.style.color = "#090";
+	breakP.className = "breakP";
 	breakP.style.fontSize = "250%";
 	div.appendChild(breakP);
 	
@@ -84,7 +84,7 @@ function makeNewDiv() {
 	
 	breakP = document.createElement("p");
 	breakP.innerHTML = "&nbsp;|&nbsp;"; //space bar space
-	breakP.style.color = "#090";
+	breakP.className = "breakP";
 	breakP.style.fontSize = "250%";
 	div.appendChild(breakP);
 	
@@ -98,7 +98,7 @@ function makeNewDiv() {
 	nameInput.tabIndex = "-1";
 	nameInput.title = "Assignment Name (optional)";
 	nameInput.className = "name form-control input-sm";
-	nameInput.placeholder = "Assignment"
+	nameInput.placeholder = "Assignment (optional)"
 	div.appendChild(nameInput);
 	
 	let deleteButton = document.createElement("button");
