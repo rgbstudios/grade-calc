@@ -1,7 +1,13 @@
 /*TODO
 download and upload assignments from previous session
 upload console
+download list of assignments? and upload?
 night mode button next to fullscreen?
+
+BUG: if calculating grades, then adding an item, then claculating with an empty item, it shows percentage as NaN
+ new feature: add modal with options to make different categories of assignments with different weights and have a select/option for those
+ color scheme for grades on individual assignments?
+ option to use cookies?
 
 warn if anything under 0 or if grade > total
 !!option to drop lowest
