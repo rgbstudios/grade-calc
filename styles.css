@@ -1,0 +1,81 @@
+* {
+	text-align: center;
+}
+
+/* inputs */
+.score, .total, .weight{
+	width: 100px !important;
+	display: inline !important;
+} .name {
+	width: 200px !important;
+	display: inline !important;	
+} #studentName {
+	width: 200px;
+}
+
+/* grade divs */
+.gradeItem {
+	border: 2px solid #999;
+	border-radius: 6px;
+	box-shadow: 1px 1px 0px #999;
+}
+.gradeItem:hover {
+	border: 2px solid #6c6;
+	box-shadow: 1px 2px 1px #6c6;
+}
+
+input, p, #grade {
+	display: inline-block;
+} h3 {
+	display: inline;
+}
+
+.delete-button {
+	margin-left: 10px;
+	color: #933;
+}
+
+
+
+#logo {
+	width: 64px;
+} #downloadLink {
+	width: 0;
+	text-decoration: none;
+}
+
+::selection {
+	background-color: #9f9;
+} ::-moz-selection {
+	background-color: #9f9;
+}
+
+img, button {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;	
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: #6c6;
+  box-shadow: 0 0 8px #6c6;
+
+}
