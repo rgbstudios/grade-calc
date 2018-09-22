@@ -27,6 +27,9 @@ BUGS
 doesn't always display info to side of assignment correctly
 */
 
+$('#nightButton').on('click', function() {
+	$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'night.css');
+});
 
 
 for(let i = 0; i < 3; i++) {

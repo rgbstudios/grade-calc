@@ -1,7 +1,8 @@
-<img src="logo/calc-logo.svg" width="64px">
-Grade Calculator - RGB Studios
+<img src="icon.svg" width="64px">
 
-a simple, quick grade calculator for professors
+# Grade Calculator - RGB Studios
+
+A simple, quick grade calculator for professors
 
 <a href="http://rgbstudios.org/grade-calc">rgbstudios.org/grade-calc</a>
 
@@ -9,7 +10,7 @@ a simple, quick grade calculator for professors
 
 <hr>
 
-1.0.7
+1.0.8
 
 by Justin Golden for RGB Studios
 
