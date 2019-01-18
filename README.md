@@ -8,7 +8,7 @@ Note: This webpage doesn't store cookies, so when you refresh or close it, your 
 
 http://rgbstudios.org/grade-calc
 
-<img src="img/teacher.svg" width="300px">
+<img src="img/teacher.svg" width="400px">
 
 ### Options
 
@@ -24,6 +24,8 @@ http://rgbstudios.org/grade-calc
 
 - Optional: Use the gavel button titled "Same Weights" to make all assignments equally weighted.
 
+<img src="img/grades.svg" width="400px">
+
 ##### Grading
 
 - Click on the score of the first assignment and start with the first student's grade.
@@ -34,6 +36,8 @@ http://rgbstudios.org/grade-calc
 
 - Optional: You can clikc the "Clear" button to clear the inputs for the next student.
 
+<img src="img/graduation.svg" width="400px">
+
 ##### Other Features:
 
 - The top right corner features a night mode button, to darken the screen for late night grading, a refresh button to reload the page, and a fullscreen button, to give you more space to work with
@@ -43,6 +47,8 @@ http://rgbstudios.org/grade-calc
 <img src="img/screenshot.jpg">
 
 ### About
+
+Images from https://undraw.co
 
 Contact: [contact@rgbstudios.org](mailto:contact@rgbstudios.org)
 
