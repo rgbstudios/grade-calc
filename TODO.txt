@@ -1,2 +1,20 @@
-move assets in folders
-update icon
+organize asssets in folders
+make pwa?
+	color scheme for grades on individual assignments?
+download and upload history and list of assignments
+new feature: add modal with options to make different categories of assignments with different weights and have a select/option for those
+option to use cookies?
+warn if anything under 0 or if grade > total
+!!option to drop lowest
+option to have different categories and weights assigned to each
+option to enter own scale
+make a large number of items at once with same weight/category
+!!display number of items
+!!if a blank item then ignore, and button to delete all blank items
+!!and if no weights assume equal
+!!console with number, letter, and name/id (optional)
+!!checkbox to clear grades and name with each calculation
+option to add one assignment to all students (grade doesn't change)
+option to print all grade or one person's
+option to have multiple "classes" with different assignments layouts you can save
+option to use student id numbers? (nothing preventing you anyway...)

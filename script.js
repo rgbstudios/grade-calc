@@ -1,31 +1,3 @@
-/*TODO
-download and upload assignments from previous session
-upload console
-download list of assignments? and upload?
-
-BUG: if calculating grades, then adding an item, then claculating with an empty item, it shows percentage as NaN
- new feature: add modal with options to make different categories of assignments with different weights and have a select/option for those
- color scheme for grades on individual assignments?
- option to use cookies?
-
-warn if anything under 0 or if grade > total
-!!option to drop lowest
-option to have different categories and weights assigned to each
-option to enter own scale
-make a large number of items at once with same weight/category
-!!display number of items
-!!if a blank item then ignore, and button to delete all blank items
-!!and if no weights assume equal
-!!console with number, letter, and name/id (optional)
-!!checkbox to clear grades and name with each calculation
-option to add one assignment to all students (grade doesn't change)
-option to print all grade or one person's
-full java program has more features. can enter class title, time, semester, student id nums
-
-BUGS
-doesn't always display info to side of assignment correctly
-*/
-
 let invalid;
 
 $(function() {
