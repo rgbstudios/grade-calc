@@ -27,19 +27,72 @@ BUGS
 doesn't always display info to side of assignment correctly
 */
 
+let invalid;
 
-$('#nightButton').on('click', function() {
-	$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'night.css');
+$(function() {
+	$('#nightButton').on('click', function() {
+		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'night.css');
+	});
+
+	for(let i=0; i<3; i++) {
+		makeNewDiv();
+	}
+
+	$('#add').click(makeNewDiv);
+
+	$('#clear').click(function() {
+		$('.score').val(0);
+		$('#studentName').val('');
+	});
+
+	$('#calc').click(calc);
+	$('#fullscreen').click(toggleFullscreen);
+
+	document.getElementById("same").onclick = function() {
+		let weightInputs = document.getElementsByClassName("weight");
+		for(let i = 0; i < weightInputs.length; i++) {
+			weightInputs[i].value = 100/weightInputs.length;
+		}
+	}
+
+	$('#copy').click(function() {
+		if(!invalid) {
+			document.oncopy = function(evt) {
+				evt.clipboardData.setData('Text', $('#grade').html() + ' ' + $('#letter').html() );
+				evt.preventDefault();
+			};
+			document.execCommand('copy');
+			document.oncopy = undefined;
+			//todo: notificaiton it was copied
+		}
+	});
+
+	$('#clearConsole').click(function() {
+		$('#console').val('').focus();
+	});
+	
+
+	$('#downloadConsole').click(function() {		
+		let data = [(document.getElementById("console").value.replace(/\r?\n/g, '\r\n'))];		
+		properties = {type: 'plain/text'};
+		try {
+			file = new File(data, "grades.txt", properties);
+		} catch(e) {
+			file = new Blob(data, properties);
+		}
+		$('#downloadLink').prop('download', 'grade console ' + getFormattedDate() + '.txt');
+		$('#downloadLink').prop('href', URL.createObjectURL(file) );
+	});
+
 });
 
 
-for(let i = 0; i < 3; i++) {
-	makeNewDiv();
-}
 
-document.getElementById("add").onclick = function() {
-	makeNewDiv();
-}
+
+
+
+
+
 
 function makeNewDiv() {
 	let div = document.createElement("div");
@@ -130,17 +183,7 @@ function makeNewDiv() {
 	//document.body.appendChild(div);
 }
 
-document.getElementById("clear").onclick = function() {
-	let scores = document.getElementsByClassName("score");
-	for(let i = 0; i < scores.length; i++) {
-		scores[i].value = 0;
-	}
-	document.getElementById("studentName").value = "";
-}
-
-let grade = 0;
-let invalid = false;
-document.getElementById("calc").onclick = function() {
+function calc() {
 	let scoreInputs = document.getElementsByClassName("score");
 	let totalInputs = document.getElementsByClassName("total");
 	let weightInputs = document.getElementsByClassName("weight");
@@ -149,20 +192,18 @@ document.getElementById("calc").onclick = function() {
 	for(let i = 0; i < weightInputs.length; i++) {
 		weightTotal += parseFloat(weightInputs[i].value);
 	}
-	grade = 0;
+	let grade = 0;
+	let invalid = false;
 	for(let j = 0; j < scoreInputs.length; j++) {
 		if(scoreInputs[j].value == "" || totalInputs[j].value == "" || weightInputs[j].value == "") {
-			console.log(j + " oops");
 			grade = "Please enter all numerical inputs and delete empty items";
 			invalid = true;
 			break;
 		} else {
 			let newVal = scoreInputs[j].value/totalInputs[j].value*weightInputs[j].value/weightTotal*100;
-			console.log(j);
 			gradeInfos[j].innerHTML = "&nbsp; Points: " + Math.round(newVal*100)/100 + "% Grade: " + Math.round(scoreInputs[j].value/totalInputs[j].value*10000)/100 + "%";
 			
 			grade += newVal;
-			invalid = false;
 		}
 	}
 	if(scoreInputs.length == 0) {
@@ -207,43 +248,7 @@ function getGradeLetter(grade) {
 	return letter;
 }
 
-document.getElementById("same").onclick = function() {
-	let weightInputs = document.getElementsByClassName("weight");
-	for(let i = 0; i < weightInputs.length; i++) {
-		weightInputs[i].value = 100/weightInputs.length;
-	}
-}
 
-document.getElementById("copy").onclick = function() {
-	if(!invalid) {
-		document.oncopy = function(event) {
-			event.clipboardData.setData("Text", document.getElementById("console").value.split("\n")[0] );
-			event.preventDefault();
-		};
-		document.execCommand("copy");
-		document.oncopy = undefined;
-		console.log("copied");
-	}
-}
-
-document.getElementById("clearConsole").onclick = function() {
-	document.getElementById("console").focus();
-	document.getElementById("console").value = "";
-}
-
-document.getElementById("downloadConsole").onclick = function() {
-	data = [];
-	data.push(document.getElementById("console").value.replace(/\r?\n/g, '\r\n'));
-	
-	properties = {type: 'plain/text'};
-	try {
-		file = new File(data, "stats.txt", properties);
-	} catch (e) {
-		file = new Blob(data, properties);
-	}
-	document.getElementById("downloadLink").download = "grade console " + getFormattedDate() + ".txt";
-	document.getElementById("downloadLink").href = URL.createObjectURL(file);
-}
 
 function getFormattedDate() {
 	let today = new Date();
@@ -254,8 +259,7 @@ function getFormattedDate() {
 	return mon + "/" + day + "/" + today.getFullYear();	
 }
 
-//https://www.thewebflash.com/toggling-fullscreen-mode-using-the-html5-fullscreen-api/
-document.getElementById("fullscreen").onclick = function() {
+function toggleFullscreen() {
 	let elem = document.documentElement;
 	if (!document.fullscreenElement && !document.mozFullScreenElement &&
 		!document.webkitFullscreenElement && !document.msFullscreenElement) {

@@ -107,6 +107,9 @@ input[type="color"]:focus,
 	.gradeLabel {
 		display: block;
 	}
+	input[type=text], input[type=number] {
+		display: inline;
+	}
 	.breakP {
 		display: none !important;
 	}
