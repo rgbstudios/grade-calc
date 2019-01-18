@@ -27,6 +27,7 @@ BUGS
 doesn't always display info to side of assignment correctly
 */
 
+
 $('#nightButton').on('click', function() {
 	$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'night.css');
 });
@@ -46,6 +47,7 @@ function makeNewDiv() {
 
 	let scoreP = document.createElement("p");
 	scoreP.innerHTML = " Score: &nbsp;";
+	scoreP.className = "gradeLabel";
 	div.appendChild(scoreP);
 	
 	let scoreInput = document.createElement("input");
@@ -72,11 +74,11 @@ function makeNewDiv() {
 	let breakP = document.createElement("p");
 	breakP.innerHTML = "&nbsp;|&nbsp;"; //space bar space
 	breakP.className = "breakP";
-	breakP.style.fontSize = "250%";
 	div.appendChild(breakP);
 	
 	let weightP = document.createElement("p");
 	weightP.innerHTML = "Weight: &nbsp;";
+	weightP.className = "gradeLabel";
 	div.appendChild(weightP);
 	
 	let weightInput = document.createElement("input");
@@ -94,11 +96,11 @@ function makeNewDiv() {
 	breakP = document.createElement("p");
 	breakP.innerHTML = "&nbsp;|&nbsp;"; //space bar space
 	breakP.className = "breakP";
-	breakP.style.fontSize = "250%";
 	div.appendChild(breakP);
 	
 	let nameP = document.createElement("p");
 	nameP.innerHTML = " Name: &nbsp;";
+	nameP.className = "gradeLabel";
 	div.appendChild(nameP);
 	
 	let nameInput = document.createElement("input");
@@ -111,7 +113,7 @@ function makeNewDiv() {
 	div.appendChild(nameInput);
 	
 	let deleteButton = document.createElement("button");
-	deleteButton.className = "btn btn-sm btn-default delete-button";
+	deleteButton.className = "btn btn-default delete-button";
 	deleteButton.innerHTML = "<i class='fas fa-times'></i>";
 	deleteButton.title = "Delete Item";
 	deleteButton.tabIndex = "-1";
