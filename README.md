@@ -2,7 +2,7 @@
 
 # Grade Calculator &mdash; RGB Studios
 
-A simple, quick grade calculator for professors
+**A simple, quick grade calculator for professors**
 
 Note: This webpage doesn't store cookies, so when you refresh or close it, your information will be gone.
 
