@@ -18,7 +18,7 @@ http://rgbstudios.org/grade-calc
 
 - Name your assignments to easily keep track of them
 
-- Assign weights to your assignments. If weights no not add up to 100, they will be weighted relative to each other, so if the total weights arre 1000, then an assignmnt worth 200 will be worth 20%
+- Assign weights to your assignments. If weights no not add up to 100, they will be weighted relative to each other, so if the total weights are 1000, then an assignment worth 200 will be worth 20%
 
 - Enter total scores those assignments are out of
 
@@ -30,7 +30,7 @@ http://rgbstudios.org/grade-calc
 
 - Click on the score of the first assignment and start with the first student's grade.
 
-- Enter their scores for each assignment and their name, then click "Calculate" to recieve their final (or current) grade
+- Enter their scores for each assignment and their name, then click "Calculate" to receive their final (or current) grade
 
 - Optional: Use <kbd>tab</kbd> and <kbd>shift</kbd> + <kbd>tab</kbd> to easily navigate the student grade inputs, so you can quickly enter students' grades.
 
