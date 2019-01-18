@@ -93,8 +93,26 @@ $(function() {
 
 
 
-
 function makeNewDiv() {
+	$('#gradeItems').append('<div class="gradeItem">' + 
+		'<p class="gradeLabel">Score: &nbsp;</p>' +
+		'<input type="number" min="0" class="score form-control input-sm" value="0" title="Score">' +
+		'<p>&nbsp;/&nbsp;</p>' +
+		'<input type="number" min="0" value="100" class="total form-control input-sm" tabIndex="-1" title="Total">' +
+		'<p class="breakP">&nbsp;|&nbsp;</p>' +
+		'<p class="gradeLabel">Weight: &nbsp;</p>' +
+		'<input type="number" min="0" value="100" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
+		'<p>%</p>' +
+		'<p class="breakP">&nbsp;|&nbsp;</p>' +
+		'<p class="gradeLabel">Name: &nbsp;</p>' +
+		'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
+		'<button class="btn btn-default delete-button" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);"><i class="fas fa-times"></i></button>' +
+		'<p class="gradeInfo"></p>' +
+		'</div>');
+	return;
+
+
+
 	let div = document.createElement("div");
 	div.className = "gradeItem";
 
@@ -180,7 +198,6 @@ function makeNewDiv() {
 	div.appendChild(gradeInfo);
 
 	document.getElementById("gradeItems").appendChild(div);
-	//document.body.appendChild(div);
 }
 
 function calc() {
@@ -223,40 +240,36 @@ function calc() {
 }
 
 function getGradeLetter(grade) {
-	if(grade >= 100) {
-		return "A+";
-	}
+	if(grade >= 100)
+		return 'A+';
+
 	let letter;
-	if(grade >= 90) {
-		letter = "A";
-	} else if(grade >= 80) {
-		letter = "B";
-	} else if(grade >= 70) {
-		letter = "C";
-	} else if(grade >= 60) {
-		letter = "D";
-	} else {
-		return "F";
-	}
+	if(grade >= 90)
+		letter = 'A';
+	else if(grade >= 80)
+		letter = 'B';
+	else if(grade >= 70)
+		letter = 'C';
+	else if(grade >= 60)
+		letter = 'D';
+	else
+		return 'F';
 	
-	if(grade%10 >= 7) {
-		letter += "+";
-	} else if(grade%10 < 3) {
-		letter += "-";
-	}
+	if(grade%10 >= 7)
+		letter += '+';
+	else if(grade%10 < 3)
+		letter += '-';
 	
 	return letter;
 }
 
-
-
 function getFormattedDate() {
 	let today = new Date();
 	let day = today.getDate();
-	let mon = today.getMonth()+1; //Jan is 0
-	day = day < 10 ? "0" + day : day;
-	mon = mon < 10 ? "0" + mon : mon;
-	return mon + "/" + day + "/" + today.getFullYear();	
+	let mon = today.getMonth()+1; // Jan is 0
+	day = day < 10 ? '0' + day : day;
+	mon = mon < 10 ? '0' + mon : mon;
+	return mon + '/' + day + '/' + today.getFullYear();	
 }
 
 function toggleFullscreen() {
