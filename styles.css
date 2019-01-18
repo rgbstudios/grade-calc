@@ -16,12 +16,15 @@ body {
 	width: 200px;
 }
 
+.alert, .gradeItem {
+	background-color: rgba(255,255,255,0.8);
+}
+
 /* grade divs */
 .gradeItem {
 	border: 2px solid #999;
 	border-radius: 6px;
 	box-shadow: 1px 1px 0px #999;
-	background: rgba(255,255,255,0.8);
 	position: relative;
 }
 .gradeItem:hover {
@@ -39,9 +42,11 @@ input, p, #grade {
 	display: inline;
 }
 
-.delete-button {
-	margin-left: 10px;
+.deleteButton {
 	color: #933;
+	position: absolute;
+	top: 0px;
+	right: 0px;
 }
 
 
@@ -69,31 +74,14 @@ img, button {
 }
 
 textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
+button:focus,
+input:focus,
 .uneditable-input:focus {   
-  border-color: #6c6;
-  box-shadow: 0 0 8px #6c6;
+  border-color: #6c6 !important;
+  box-shadow: 2px 2px 2px #6c6 !important;
 
 }
 
-.delete-button {
-	position: absolute;
-	top: 0px !important;
-	right: 0px !important;
-}
 
 @media screen and (max-width: 768px) {
 	.alert {

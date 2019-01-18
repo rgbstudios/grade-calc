@@ -2,7 +2,6 @@
 download and upload assignments from previous session
 upload console
 download list of assignments? and upload?
-night mode button next to fullscreen?
 
 BUG: if calculating grades, then adding an item, then claculating with an empty item, it shows percentage as NaN
  new feature: add modal with options to make different categories of assignments with different weights and have a select/option for those
@@ -45,7 +44,7 @@ $(function() {
 		$('#studentName').val('');
 	});
 
-	$('#calc').click(calc);
+	$('#calc').click(doCalc);
 	$('#fullscreen').click(toggleFullscreen);
 
 	document.getElementById("same").onclick = function() {
@@ -99,53 +98,13 @@ function makeNewDiv() {
 		'<p class="breakP">&nbsp;|&nbsp;</p>' +
 		'<p class="gradeLabel">Name: &nbsp;</p>' +
 		'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
-		'<button class="btn btn-default delete-button" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
+		'<button class="btn btn-light deleteButton" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
 		'<i class="fas fa-times"></i></button>' +
 		'<p class="gradeInfo"></p>' +
 		'</div>');
 }
 
-function calc() {
-	let scoreInputs = document.getElementsByClassName('score');
-	let totalInputs = document.getElementsByClassName('total');
-	let weightInputs = document.getElementsByClassName('weight');
-	let gradeInfos = document.getElementsByClassName('gradeInfo');
-	let weightTotal = 0;
-	for(let i=0; i<weightInputs.length; i++) {
-		weightTotal += parseFloat(weightInputs[i].value);
-	}
-	let grade = 0;
-	let invalid = false;
-	for(let j=0; j<scoreInputs.length; j++) {
-		if(scoreInputs[j].value == "" || totalInputs[j].value == "" || weightInputs[j].value == "") {
-			grade = "Please enter all numerical inputs and delete empty items";
-			invalid = true;
-			break;
-		} else {
-			let newVal = scoreInputs[j].value/totalInputs[j].value*weightInputs[j].value/weightTotal*100;
-			gradeInfos[j].innerHTML = "&nbsp; Points: " + Math.round(newVal*100)/100 + "% Grade: " + Math.round(scoreInputs[j].value/totalInputs[j].value*10000)/100 + "%";
-			
-			grade += newVal;
-		}
-	}
-	if(scoreInputs.length == 0) {
-		invalid = true;
-		grade = "Please add an item with the button on the left";
-	}
-	if(!invalid) {
-		grade = Math.round(grade*100)/100;
-		document.getElementById("letter").innerHTML = getGradeLetter(grade);
-		let consoleText = document.getElementById("console");
-		consoleText.value = document.getElementById("studentName").value + " " + grade + "% " + getGradeLetter(grade) + "\n" + consoleText.value;
-		document.getElementById("grade").innerHTML = grade + " %";
-	} else {
-		document.getElementById("letter").innerHTML = "";
-		document.getElementById("grade").innerHTML = grade;
-	}
-}
-
 function doCalc() {
-
 	if($('.gradeItem').length==0) {
 		invalid = true;
 		$('#grade').html('Please add an item with the "New Item" button');
@@ -179,7 +138,7 @@ function doCalc() {
 	}
 }
 
-// returns array of isValid, grade if valid, false otherwise
+// returns array of isValid, grade if valid, message otherwise
 function getAssignmentGrade(elm, weightTotal) {
 	let scoreInput = elm.find('.score');
 	let totalInput = elm.find('.total');
@@ -192,7 +151,6 @@ function getAssignmentGrade(elm, weightTotal) {
 	let newVal = scoreInput.val() / totalInput.val() * weightInput.val() / weightTotal * 100;
 	gradeInfo.html('&nbsp; Points: ' + Math.round(newVal*100)/100 + '% Grade: ' + Math.round(scoreInput.val()/totalInput.val()*10000)/100 + '%');
 	return {invalid: false, grade: newVal};
-
 }
 
 function getGradeLetter(grade) {
