@@ -2,7 +2,7 @@ let invalid;
 
 $(function() {
 	$('#nightButton').on('click', function() {
-		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'night.css');
+		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
 	});
 
 	for(let i=0; i<3; i++) {
