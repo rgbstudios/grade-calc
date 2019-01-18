@@ -1,7 +1,7 @@
 let invalid;
 
 $(function() {
-	$('#nightButton').on('click', function() {
+	$('#nightButton').click(function() {
 		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
 	});
 
@@ -19,12 +19,11 @@ $(function() {
 	$('#calc').click(doCalc);
 	$('#fullscreen').click(toggleFullscreen);
 
-	document.getElementById("same").onclick = function() {
-		let weightInputs = document.getElementsByClassName("weight");
-		for(let i = 0; i < weightInputs.length; i++) {
+	$('#same').click(function() {
+		let weightInputs = $('.weight');
+		for(let i=0; i<weightInputs.length; i++)
 			weightInputs[i].value = 100/weightInputs.length;
-		}
-	}
+	});
 
 	$('#copy').click(function() {
 		if(!invalid) {
