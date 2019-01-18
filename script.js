@@ -14,11 +14,11 @@ option to have different categories and weights assigned to each
 option to enter own scale
 make a large number of items at once with same weight/category
 !!display number of items
-!!if a blank item then ignore
+!!if a blank item then ignore, and button to delete all blank items
 !!and if no weights assume equal
 !!console with number, letter, and name/id (optional)
 !!checkbox to clear grades and name with each calculation
-option to add one assignment to all students
+option to add one assignment to all students (grade doesn't change)
 option to print all grade or one person's
 full java program has more features. can enter class title, time, semester, student id nums
 
@@ -130,6 +130,7 @@ function doCalc() {
 	if(invalid) {
 		$('#letter').html('');
 		$('#grade').html(message);
+		$('.gradeInfo').html('');
 	} else {
 		grade = Math.round(grade*100)/100;
 		$('#letter').html(getGradeLetter(grade) );

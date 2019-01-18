@@ -76,12 +76,10 @@ img, button {
 textarea:focus,
 button:focus,
 input:focus,
-.uneditable-input:focus {   
-  border-color: #6c6 !important;
-  box-shadow: 2px 2px 2px #6c6 !important;
-
+.uneditable-input:focus {
+	border-color: #6c6 !important;
+	box-shadow: 2px 2px 2px #6c6 !important;
 }
-
 
 @media screen and (max-width: 768px) {
 	.alert {
