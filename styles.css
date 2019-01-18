@@ -2,17 +2,19 @@
 	text-align: center;
 }
 body {
-	background: #fff url("teacher.svg") no-repeat fixed center;
+	background: #fff url("img/teacher.svg") no-repeat fixed center;
 	padding: 20px;
 }
 /* inputs */
-.score, .total, .weight{
+.score, .total, .weight {
 	width: 100px !important;
 	display: inline !important;
-} .name {
+}
+.name {
 	width: 200px !important;
 	display: inline !important;	
-} #studentName {
+}
+#studentName {
 	width: 200px;
 }
 
@@ -35,13 +37,6 @@ body {
 	color: #393 !important;
 	font-size: 250%;
 }
-
-input, p, #grade {
-	display: inline-block;
-} h3 {
-	display: inline;
-}
-
 .deleteButton {
 	color: #933;
 	position: absolute;
@@ -49,21 +44,25 @@ input, p, #grade {
 	right: 0px;
 }
 
-
-
+input, p, #grade {
+	display: inline-block;
+}
+h3 {
+	display: inline;
+}
 #logo {
 	width: 64px;
-} #downloadLink {
+}
+#downloadLink {
 	width: 0;
 	text-decoration: none;
 }
 
 ::selection {
-	background-color: #9f9;
+	background-color: #ccc;
 } ::-moz-selection {
-	background-color: #9f9;
+	background-color: #ccc;
 }
-
 img, button {
 	user-drag: none; 
 	user-select: none;
@@ -73,10 +72,7 @@ img, button {
 	-ms-user-select: none;	
 }
 
-textarea:focus,
-button:focus,
-input:focus,
-.uneditable-input:focus {
+textarea:focus, button:focus, input:focus, .uneditable-input:focus {
 	border-color: #6c6 !important;
 	box-shadow: 2px 2px 2px #6c6 !important;
 }
@@ -92,9 +88,6 @@ input:focus,
 	}
 	.gradeLabel {
 		display: block;
-	}
-	input[type=text], input[type=number] {
-		display: inline;
 	}
 	.breakP {
 		display: none !important;

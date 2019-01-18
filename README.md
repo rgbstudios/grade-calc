@@ -1,4 +1,4 @@
-<img src="icon.svg" width="64px">
+<img src="img/icon.svg" width="64px">
 
 # Grade Calculator - RGB Studios
 
@@ -6,7 +6,7 @@ A simple, quick grade calculator for professors
 
 <a href="http://rgbstudios.org/grade-calc">rgbstudios.org/grade-calc</a>
 
-<img src="screenshot.png">
+<img src="img/screenshot.png">
 
 <hr>
 
