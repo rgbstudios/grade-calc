@@ -86,13 +86,6 @@ $(function() {
 
 });
 
-
-
-
-
-
-
-
 function makeNewDiv() {
 	$('#gradeItems').append('<div class="gradeItem">' + 
 		'<p class="gradeLabel">Score: &nbsp;</p>' +
@@ -101,117 +94,29 @@ function makeNewDiv() {
 		'<input type="number" min="0" value="100" class="total form-control input-sm" tabIndex="-1" title="Total">' +
 		'<p class="breakP">&nbsp;|&nbsp;</p>' +
 		'<p class="gradeLabel">Weight: &nbsp;</p>' +
-		'<input type="number" min="0" value="100" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
+		'<input type="number" min="0" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
 		'<p>%</p>' +
 		'<p class="breakP">&nbsp;|&nbsp;</p>' +
 		'<p class="gradeLabel">Name: &nbsp;</p>' +
 		'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
-		'<button class="btn btn-default delete-button" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);"><i class="fas fa-times"></i></button>' +
+		'<button class="btn btn-default delete-button" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
+		'<i class="fas fa-times"></i></button>' +
 		'<p class="gradeInfo"></p>' +
 		'</div>');
-	return;
-
-
-
-	let div = document.createElement("div");
-	div.className = "gradeItem";
-
-	let scoreP = document.createElement("p");
-	scoreP.innerHTML = " Score: &nbsp;";
-	scoreP.className = "gradeLabel";
-	div.appendChild(scoreP);
-	
-	let scoreInput = document.createElement("input");
-	scoreInput.type = "number";
-	scoreInput.min = "0";
-	scoreInput.className = "score form-control input-sm";
-	scoreInput.value = "0";
-	scoreInput.title = "Score";
-	div.appendChild(scoreInput);
-	
-	let slash = document.createElement("p");
-	slash.innerHTML = "&nbsp;/&nbsp;"; //space slash space
-	div.appendChild(slash);
-	
-	let totalInput = document.createElement("input");
-	totalInput.type = "number";
-	totalInput.min = "0";
-	totalInput.value = "100";
-	totalInput.className = "total form-control input-sm";
-	totalInput.tabIndex = "-1";
-	totalInput.title = "Total";
-	div.appendChild(totalInput);
-
-	let breakP = document.createElement("p");
-	breakP.innerHTML = "&nbsp;|&nbsp;"; //space bar space
-	breakP.className = "breakP";
-	div.appendChild(breakP);
-	
-	let weightP = document.createElement("p");
-	weightP.innerHTML = "Weight: &nbsp;";
-	weightP.className = "gradeLabel";
-	div.appendChild(weightP);
-	
-	let weightInput = document.createElement("input");
-	weightInput.type = "number";
-	weightInput.min = "0";
-	weightInput.className = "weight form-control input-sm";
-	weightInput.tabIndex = "-1";
-	weightInput.title = "Weight (should add to 100%)";
-	div.appendChild(weightInput);
-
-	let percentP = document.createElement("p");
-	percentP.innerHTML = " % ";
-	div.appendChild(percentP);
-	
-	breakP = document.createElement("p");
-	breakP.innerHTML = "&nbsp;|&nbsp;"; //space bar space
-	breakP.className = "breakP";
-	div.appendChild(breakP);
-	
-	let nameP = document.createElement("p");
-	nameP.innerHTML = " Name: &nbsp;";
-	nameP.className = "gradeLabel";
-	div.appendChild(nameP);
-	
-	let nameInput = document.createElement("input");
-	nameInput.type = "text";
-	nameInput.min = "0";
-	nameInput.tabIndex = "-1";
-	nameInput.title = "Assignment Name (optional)";
-	nameInput.className = "name form-control input-sm";
-	nameInput.placeholder = "Assignment (optional)"
-	div.appendChild(nameInput);
-	
-	let deleteButton = document.createElement("button");
-	deleteButton.className = "btn btn-default delete-button";
-	deleteButton.innerHTML = "<i class='fas fa-times'></i>";
-	deleteButton.title = "Delete Item";
-	deleteButton.tabIndex = "-1";
-	deleteButton.onclick = function() {
-		this.parentNode.parentNode.removeChild(this.parentNode);
-	}
-	div.appendChild(deleteButton);
-	
-	let gradeInfo = document.createElement("p");
-	gradeInfo.className = "gradeInfo";
-	div.appendChild(gradeInfo);
-
-	document.getElementById("gradeItems").appendChild(div);
 }
 
 function calc() {
-	let scoreInputs = document.getElementsByClassName("score");
-	let totalInputs = document.getElementsByClassName("total");
-	let weightInputs = document.getElementsByClassName("weight");
-	let gradeInfos = document.getElementsByClassName("gradeInfo");
+	let scoreInputs = document.getElementsByClassName('score');
+	let totalInputs = document.getElementsByClassName('total');
+	let weightInputs = document.getElementsByClassName('weight');
+	let gradeInfos = document.getElementsByClassName('gradeInfo');
 	let weightTotal = 0;
-	for(let i = 0; i < weightInputs.length; i++) {
+	for(let i=0; i<weightInputs.length; i++) {
 		weightTotal += parseFloat(weightInputs[i].value);
 	}
 	let grade = 0;
 	let invalid = false;
-	for(let j = 0; j < scoreInputs.length; j++) {
+	for(let j=0; j<scoreInputs.length; j++) {
 		if(scoreInputs[j].value == "" || totalInputs[j].value == "" || weightInputs[j].value == "") {
 			grade = "Please enter all numerical inputs and delete empty items";
 			invalid = true;
@@ -237,6 +142,57 @@ function calc() {
 		document.getElementById("letter").innerHTML = "";
 		document.getElementById("grade").innerHTML = grade;
 	}
+}
+
+function doCalc() {
+
+	if($('.gradeItem').length==0) {
+		invalid = true;
+		$('#grade').html('Please add an item with the "New Item" button');
+		return;
+	}
+
+	let weightTotal = 0;
+	$('.weight').each(function(idx, val){
+		weightTotal += parseFloat($(val).val() );
+	});
+	let grade = 0;
+	invalid = false;	
+	let message = '';
+	$('.gradeItem').each(function(idx, val) {
+		let item = getAssignmentGrade($(val), weightTotal);
+		if(item.invalid) {
+			invalid = true;
+			message = item.message;
+		 } else {
+			grade += item.grade;		 	
+		}
+	});
+	if(invalid) {
+		$('#letter').html('');
+		$('#grade').html(message);
+	} else {
+		grade = Math.round(grade*100)/100;
+		$('#letter').html(getGradeLetter(grade) );
+		$('#console').val($('#studentName').val() + ' ' + grade + '% ' + getGradeLetter(grade) + '\n' + $('#console').val() );
+		$('#grade').html(grade + '%');
+	}
+}
+
+// returns array of isValid, grade if valid, false otherwise
+function getAssignmentGrade(elm, weightTotal) {
+	let scoreInput = elm.find('.score');
+	let totalInput = elm.find('.total');
+	let weightInput = elm.find('.weight');
+	let gradeInfo = elm.find('.gradeInfo');
+
+	if(scoreInput.val() == '' || totalInput.val() == '' || weightInput.val() == '')
+		return {invalid: true, message:'Please enter all numerical inputs and delete empty items'};
+
+	let newVal = scoreInput.val() / totalInput.val() * weightInput.val() / weightTotal * 100;
+	gradeInfo.html('&nbsp; Points: ' + Math.round(newVal*100)/100 + '% Grade: ' + Math.round(scoreInput.val()/totalInput.val()*10000)/100 + '%');
+	return {invalid: false, grade: newVal};
+
 }
 
 function getGradeLetter(grade) {
