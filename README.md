@@ -34,7 +34,7 @@ http://rgbstudios.org/grade-calc
 
 - Optional: Use <kbd>tab</kbd> and <kbd>shift</kbd> + <kbd>tab</kbd> to easily navigate the student grade inputs, so you can quickly enter students' grades.
 
-- Optional: You can clikc the "Clear" button to clear the inputs for the next student.
+- Optional: You can click the "Clear" button to clear the inputs for the next student.
 
 <img src="img/grades.svg" width="300px">
 
