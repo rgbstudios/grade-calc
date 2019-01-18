@@ -1,4 +1,3 @@
-organize asssets in folders
 	list features in readme
 make pwa?
 	color scheme for grades on individual assignments?
