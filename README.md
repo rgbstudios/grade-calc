@@ -8,7 +8,7 @@ Note: This webpage doesn't store cookies, so when you refresh or close it, your 
 
 http://rgbstudios.org/grade-calc
 
-<img src="img/teacher.svg" width="400px">
+<img src="img/screenshot.jpg">
 
 ### Options
 
@@ -24,7 +24,7 @@ http://rgbstudios.org/grade-calc
 
 - Optional: Use the gavel button titled "Same Weights" to make all assignments equally weighted.
 
-<img src="img/grades.svg" width="400px">
+<img src="img/teacher.svg" width="300px">
 
 ##### Grading
 
@@ -36,7 +36,7 @@ http://rgbstudios.org/grade-calc
 
 - Optional: You can clikc the "Clear" button to clear the inputs for the next student.
 
-<img src="img/graduation.svg" width="400px">
+<img src="img/grades.svg" width="300px">
 
 ##### Other Features:
 
@@ -44,7 +44,7 @@ http://rgbstudios.org/grade-calc
 
 - The bottom of the page features a history log, so you can view all of the students' grades at once when you're done.
 
-<img src="img/screenshot.jpg">
+<img src="img/graduation.svg" width="300px">
 
 ### About
 
