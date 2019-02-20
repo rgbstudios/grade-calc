@@ -17,3 +17,4 @@ option to add one assignment to all students (grade doesn't change)
 option to print all grade or one person's
 option to have multiple "classes" with different assignments layouts you can save
 option to use student id numbers? (nothing preventing you anyway...)
+histogram of all students' grades
