@@ -1,4 +1,7 @@
 fix the god-awful mobile design on this website...
+make a help button (could just take them to the readme on github)
+option for student name to not be tab-able
+option for download to also download all scores in history, not just final calculated grade
 make pwa?
 	color scheme for grades on individual assignments?
 download and upload history and list of assignments
