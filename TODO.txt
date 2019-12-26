@@ -1,3 +1,4 @@
+fix the god-awful mobile design on this website...
 make pwa?
 	color scheme for grades on individual assignments?
 download and upload history and list of assignments
