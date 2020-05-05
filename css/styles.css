@@ -15,7 +15,7 @@ body {
 	width: 200px !important;
 	display: inline !important;	
 }
-#studentName {
+#student-name {
 	width: 200px;
 }
 
@@ -27,31 +27,35 @@ body {
 }
 
 /* grade divs */
+#grade-items {
+	font-weight: bold;
+}
 .gradeItem {
 	border: 2px solid #999;
 	border-radius: 6px;
 	box-shadow: 1px 1px 0px #999;
 	position: relative;
 }
-.gradeItem:hover {
+/*.gradeItem:hover {
 	border: 2px solid #6c6;
 	box-shadow: 1px 2px 1px #6c6;
-}
+}*/
 .breakP {
 	color: #393 !important;
 	font-size: 250%;
 }
-.deleteButton {
+.delete-btn {
 	color: #933;
 	position: absolute;
 	top: 0px;
 	right: 0px;
 }
 
-input, p, #grade {
+input, p, #grade-text {
 	display: inline-block;
 }
-h3 {
+h1 {
+	font-weight: lighter;
 	display: inline;
 }
 a {

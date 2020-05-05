@@ -1,7 +1,7 @@
 let invalid;
 
 $( ()=> {
-	$('#nightButton').click( ()=> {
+	$('#night-btn').click( ()=> {
 		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
 	});
 
@@ -9,37 +9,32 @@ $( ()=> {
 		makeNewDiv();
 	}
 
-	$('#add').click(makeNewDiv);
+	$('#add-btn').click(makeNewDiv);
 
-	$('#clear').click( ()=> {
+	$('#clear-btn').click( ()=> {
 		$('.score').val(0);
-		$('#studentName').val('');
+		$('#student-name').val('');
 	});
 
-	$('#calc').click(doCalc);
-	$('#fullscreen').click(toggleFullscreen);
+	$('#calc-btn').click(doCalc);
+	$('#fullscreen-btn').click(toggleFullscreen);
 
-	$('#same').click( ()=> {
+	$('#same-btn').click( ()=> {
 		let weightInputs = $('.weight');
-		for(let i=0; i<weightInputs.length; i++)
-			weightInputs[i].value = 100/weightInputs.length;
+		for(input of weightInputs)
+			input.value = 100/weightInputs.length;
 	});
 
-	$('#copy').click( ()=> {
+	$('#copy-btn').click( ()=> {
 		if(!invalid) {
-			document.oncopy = (evt)=> {
-				evt.clipboardData.setData('Text', $('#grade').html() + ' ' + $('#letter').html() );
-				evt.preventDefault();
-			};
-			document.execCommand('copy');
-			document.oncopy = undefined;
+			copyText($('#grade-text').html() + ' ' + $('#letter-text').html() );
 			//todo: notificaiton it was copied
 		}
 	});
 
-	$('#clearConsole').click( ()=> $('#console').val('') );
+	$('#clear-console-btn').click( ()=> $('#console').val('') );
 	
-	$('#downloadConsole').click( ()=> {		
+	$('#download-console-btn').click( ()=> {		
 		let data = [($('#console').val().replace(/\r?\n/g, '\r\n'))];		
 		properties = {type: 'plain/text'};
 		try {
@@ -47,14 +42,14 @@ $( ()=> {
 		} catch(e) {
 			file = new Blob(data, properties);
 		}
-		$('#downloadLink').prop('download', 'grade console ' + getFormattedDate() + '.txt');
-		$('#downloadLink').prop('href', URL.createObjectURL(file) );
+		$('#download-link').prop('download', 'grade console ' + getFormattedDate() + '.txt');
+		$('#download-link').prop('href', URL.createObjectURL(file) );
 	});
 
 });
 
 function makeNewDiv() {
-	$('#gradeItems').append(
+	$('#grade-items').append(
 		'<div class="gradeItem">' + 
 			'<p class="gradeLabel">Score: &nbsp;</p>' +
 			'<input type="number" min="0" class="score form-control input-sm" value="0" title="Score">' +
@@ -67,7 +62,7 @@ function makeNewDiv() {
 			'<p class="breakP">&nbsp;|&nbsp;</p>' +
 			'<p class="gradeLabel">Name: &nbsp;</p>' +
 			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
-			'<button class="btn btn-light deleteButton" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
+			'<button class="btn btn-light delete-btn" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
 			'<i class="fas fa-times"></i></button>' +
 			'<p class="gradeInfo"></p>' +
 		'</div>'
@@ -77,7 +72,7 @@ function makeNewDiv() {
 function doCalc() {
 	if($('.gradeItem').length==0) {
 		invalid = true;
-		$('#grade').html('Please add an item with the "New Item" button');
+		$('#grade-text').html('Please add an item with the "New Item" button');
 		return;
 	}
 
@@ -98,14 +93,14 @@ function doCalc() {
 		}
 	});
 	if(invalid) {
-		$('#letter').html('');
-		$('#grade').html(message);
+		$('#letter-text').html('');
+		$('#grade-text').html(message);
 		$('.gradeInfo').html('');
 	} else {
 		grade = Math.round(grade*100)/100;
-		$('#letter').html(getGradeLetter(grade) );
-		$('#console').val($('#studentName').val() + ' ' + grade + '% ' + getGradeLetter(grade) + '\n' + $('#console').val() );
-		$('#grade').html(grade + '%');
+		$('#letter-text').html(getGradeLetter(grade) );
+		$('#console').val($('#student-name').val() + ' ' + grade + '% ' + getGradeLetter(grade) + '\n' + $('#console').val() );
+		$('#grade-text').html(grade + '%');
 	}
 }
 
@@ -181,4 +176,12 @@ function toggleFullscreen() {
 			document.webkitExitFullscreen();
 		}
 	}
+}
+
+function copyText(str) {
+	let tmp = $('<input type="text">').appendTo(document.body);
+	tmp.val(str);
+	tmp.select();
+	document.execCommand('copy');
+	tmp.remove();
 }

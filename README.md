@@ -8,7 +8,7 @@
 
 http://rgbstudios.org/grade-calc
 
-Note: This webpage doesn't store cookies, so when you refresh or close it, your information will be gone. For the chrome app version, go [here](https://chrome.google.com/webstore/detail/amomifflklnjfjcamncbnepiakdfnjca/publish-delayed?hl=en&gl=US) or view its repo [here](https://github.com/rgbstudios/grade-calc-chrome-app).
+Note: This webpage doesn't store cookies, so when you refresh or close it, your information will be gone. For the chrome app version, go [here](https://chrome.google.com/webstore/detail/amomifflklnjfjcamncbnepiakdfnjca/) or view its repo [here](https://github.com/rgbstudios/grade-calc-chrome-app).
 
 <img src="img/screenshot.jpg">
 
