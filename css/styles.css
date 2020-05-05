@@ -3,40 +3,40 @@
 }
 body {
 	background: #fff url("../img/teacher-light.svg") no-repeat fixed center;
-	padding: 20px;
-	padding-top: 0px;
+	padding: 1rem;
 }
 /* inputs */
+input {
+	border: 2px solid #ccc !important;
+}
 .score, .total, .weight {
-	width: 100px !important;
-	display: inline !important;
+	width: 6rem;
+	display: inline;
 }
 .name {
-	width: 200px !important;
-	display: inline !important;	
+	width: 12rem;
+	display: inline;	
 }
 #student-name {
-	width: 200px;
+	width: 16rem;
 }
 
-.alert, .gradeItem {
+.alert, .grade-item {
 	background-color: rgba(255,255,255,0.8);
-}
-.alert {
-	margin: 0;
 }
 
 /* grade divs */
 #grade-items {
 	font-weight: bold;
 }
-.gradeItem {
-	border: 2px solid #999;
-	border-radius: 6px;
+.grade-item {
+	border: 2px solid #ccc;
+	border-radius: 0.5rem;
 	box-shadow: 1px 1px 0px #999;
 	position: relative;
+	margin-bottom: 0.25rem;
 }
-/*.gradeItem:hover {
+/*.grade-item:hover {
 	border: 2px solid #6c6;
 	box-shadow: 1px 2px 1px #6c6;
 }*/
@@ -45,10 +45,17 @@ body {
 	font-size: 250%;
 }
 .delete-btn {
+	background-color: transparent;
+	border: 2px solid #ccc;
+	border-radius: 0.5rem;
 	color: #933;
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: -2px;
+	right: -2px;
+}
+.delete-btn:hover {
+	background-color: #933;
+	color: #fff;
 }
 
 input, p, #grade-text {
@@ -64,7 +71,7 @@ a {
 #logo {
 	width: 64px;
 }
-#downloadLink {
+#download-link {
 	width: 0;
 	text-decoration: none;
 }
@@ -83,7 +90,7 @@ img, button {
 	-ms-user-select: none;	
 }
 
-textarea:focus, button:focus, input:focus, .uneditable-input:focus {
+textarea:focus, button:focus, input:focus {
 	border-color: #6c6 !important;
 	box-shadow: 2px 2px 2px #6c6 !important;
 }
@@ -101,7 +108,7 @@ textarea:focus, button:focus, input:focus, .uneditable-input:focus {
 	body {
 		background: #fff;
 	}
-	.gradeLabel {
+	.grade-label {
 		display: block;
 	}
 	.breakP {

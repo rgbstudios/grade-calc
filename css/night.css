@@ -6,7 +6,7 @@ textarea {
 	background-color: rgba(0,0,0,0) !important;
 	color: #fff !important;
 }
-.alert, .gradeItem {
+.alert, .grade-item {
 	background: rgba(51,51,51,0.8) !important;
 }
 
@@ -17,4 +17,8 @@ textarea {
 kbd {
 	background-color: #fff !important;
 	color: #000 !important;
+}
+
+.popover {
+	color: #000;
 }

@@ -53,19 +53,19 @@ $( ()=> {
 
 function makeNewDiv() {
 	$('#grade-items').append(
-		'<div class="gradeItem">' + 
-			'<p class="gradeLabel">Score: &nbsp;</p>' +
+		'<div class="grade-item">' + 
+			'<p class="grade-label">Score: &nbsp;</p>' +
 			'<input type="number" min="0" class="score form-control input-sm" value="0" title="Score">' +
 			'<p>&nbsp;/&nbsp;</p>' +
 			'<input type="number" min="0" value="100" class="total form-control input-sm" tabIndex="-1" title="Total">' +
 			'<p class="breakP">&nbsp;|&nbsp;</p>' +
-			'<p class="gradeLabel">Weight: &nbsp;</p>' +
+			'<p class="grade-label">Weight: &nbsp;</p>' +
 			'<input type="number" min="0" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
 			'<p>%</p>' +
 			'<p class="breakP">&nbsp;|&nbsp;</p>' +
-			'<p class="gradeLabel">Name: &nbsp;</p>' +
+			'<p class="grade-label">Name: &nbsp;</p>' +
 			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
-			'<button class="btn btn-light delete-btn" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
+			'<button class="btn delete-btn" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
 			'<i class="fas fa-times"></i></button>' +
 			'<p class="gradeInfo"></p>' +
 		'</div>'
@@ -73,7 +73,7 @@ function makeNewDiv() {
 }
 
 function doCalc() {
-	if($('.gradeItem').length==0) {
+	if($('.grade-item').length==0) {
 		invalid = true;
 		$('#grade-text').html('Please add an item with the "New Item" button');
 		return;
@@ -86,7 +86,7 @@ function doCalc() {
 	let grade = 0;
 	invalid = false;	
 	let message = '';
-	$('.gradeItem').each( (idx, val)=> {
+	$('.grade-item').each( (idx, val)=> {
 		let item = getAssignmentGrade($(val), weightTotal);
 		if(item.invalid) {
 			invalid = true;

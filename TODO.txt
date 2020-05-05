@@ -36,3 +36,4 @@ display setting to hide copy btn (toggle switch)
 add animations to hover on btns
 setting for copy btn copyies letter, percentage, or both
 setting to display percentage as floating point without percent sign (ex. 0.876 instead of 87.6%)
+put alert and read more link in another modal, (maybe) move history to modal to clean ui? option to display history in modal only or on page as well
