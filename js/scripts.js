@@ -1,6 +1,9 @@
 let invalid;
 
 $( ()=> {
+
+	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
+
 	$('#night-btn').click( ()=> {
 		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
 	});

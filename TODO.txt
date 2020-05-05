@@ -28,7 +28,6 @@ input verification
 organize js and rename html elms
 download csv of grade data for import/export
 focus top grade input upon click calc btn
-add popper for titles
 display if there are no assingments? vector graphic of no assingments here
 error messages in seperate display and different css, instead of in grade result display
 add email btn in info modal (eventually) for questions, or suggestions

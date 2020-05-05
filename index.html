@@ -18,6 +18,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>  
 
@@ -33,9 +34,9 @@
 		<h1>Quick Grade Calculator <sub>for professors</sub></h1>
 	</div>
 	<div class="col-md-3 col-sm-12 my-2">
-		<button id="night-btn" title="Toggle Night Mode" class="btn btn-default" tabindex="-1"><i class="fas fa-moon"></i></button>
-		<button title="Reset" class="btn btn-default" tabindex="-1" onclick="location.reload();"><i class="fas fa-sync-alt"></i></button>
-		<button id="fullscreen-btn" title="Toggle Fullscreen" class="btn btn-default" tabindex="-1"><i class="fas fa-arrows-alt"></i></button>
+		<button id="night-btn" title="Toggle night mode" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-moon"></i></button>
+		<button title="Reset everything" data-toggle="popover" class="btn btn-default" tabindex="-1" onclick="location.reload();"><i class="fas fa-sync-alt"></i></button>
+		<button id="fullscreen-btn" title="Toggle fullscreen" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-arrows-alt"></i></button>
 	</div>
 </div>
 
@@ -48,22 +49,22 @@
 
 <input id="student-name"  maxlength="50" type="text" class="form-control input-sm" placeholder="Student Name (optional)"></input>
 
-<button id="add-btn" title="New Item" class="btn btn-default" tabindex="-1"><i class="fas fa-plus"></i> New Item</button>
-<button id="clear-btn" title="Clear All Grades" class="btn btn-default" tabindex="-1"><i class="fas fa-eraser"></i> Clear</button>
-<button id="same-btn" title="Make all weights the same" class="btn btn-default" tabindex="-1"><i class="fas fa-balance-scale"></i> Same Weights</button>
+<button id="add-btn" title="Add a new assignment" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-plus"></i> New Item</button>
+<button id="clear-btn" title="Clear all grades" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-eraser"></i> Clear</button>
+<button id="same-btn" title="Make all assignment weights the same" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-balance-scale"></i> Same Weights</button>
 
 <hr>
-<button id="calc-btn" class="btn btn-success btn-lg btn-block" title="Calculate weighted course grade">Calculate <i class="fas fa-chevron-circle-right"></i></button>
+<button id="calc-btn" class="btn btn-success btn-lg btn-block" title="Calculate weighted course grade" data-toggle="popover">Calculate <i class="fas fa-chevron-circle-right"></i></button>
 <h1 id="grade-text" class="m-2">Grade will appear here </h1>
-<button id="copy-btn" title="Copy grade to clipboard" class="btn btn-default" tabindex="-1"><i class="fas fa-copy"></i></button>
+<button id="copy-btn" title="Copy grade to clipboard" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-copy"></i></button>
 <h3 id="letter-text"></h3>
 <hr>
 
 <h4><i class="fas fa-history"></i> History</h4>
 
-<button id="clear-console-btn" title="Clear Console" class="btn btn-default" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
+<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
 <a id="download-link" target="_blank" download="stats.txt">
-<button id="download-console-btn" title="Download Console" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download History</button>
+<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download History</button>
 </a>
 
 <textarea id="console" class="form-control" rows="5"></textarea>

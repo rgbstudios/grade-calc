@@ -88,6 +88,10 @@ textarea:focus, button:focus, input:focus, .uneditable-input:focus {
 	box-shadow: 2px 2px 2px #6c6 !important;
 }
 
+.popover-body {
+	display: none;
+}
+
 @media screen and (max-width: 768px) {
 	.alert {
 		visibility: hidden;
