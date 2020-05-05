@@ -1,7 +1,7 @@
 let invalid;
 
-$(function() {
-	$('#nightButton').click(function() {
+$( ()=> {
+	$('#nightButton').click( ()=> {
 		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
 	});
 
@@ -11,7 +11,7 @@ $(function() {
 
 	$('#add').click(makeNewDiv);
 
-	$('#clear').click(function() {
+	$('#clear').click( ()=> {
 		$('.score').val(0);
 		$('#studentName').val('');
 	});
@@ -19,15 +19,15 @@ $(function() {
 	$('#calc').click(doCalc);
 	$('#fullscreen').click(toggleFullscreen);
 
-	$('#same').click(function() {
+	$('#same').click( ()=> {
 		let weightInputs = $('.weight');
 		for(let i=0; i<weightInputs.length; i++)
 			weightInputs[i].value = 100/weightInputs.length;
 	});
 
-	$('#copy').click(function() {
+	$('#copy').click( ()=> {
 		if(!invalid) {
-			document.oncopy = function(evt) {
+			document.oncopy = (evt)=> {
 				evt.clipboardData.setData('Text', $('#grade').html() + ' ' + $('#letter').html() );
 				evt.preventDefault();
 			};
@@ -37,13 +37,10 @@ $(function() {
 		}
 	});
 
-	$('#clearConsole').click(function() {
-		$('#console').val('').focus();
-	});
+	$('#clearConsole').click( ()=> $('#console').val('') );
 	
-
-	$('#downloadConsole').click(function() {		
-		let data = [(document.getElementById("console").value.replace(/\r?\n/g, '\r\n'))];		
+	$('#downloadConsole').click( ()=> {		
+		let data = [($('#console').val().replace(/\r?\n/g, '\r\n'))];		
 		properties = {type: 'plain/text'};
 		try {
 			file = new File(data, "grades.txt", properties);
@@ -57,22 +54,24 @@ $(function() {
 });
 
 function makeNewDiv() {
-	$('#gradeItems').append('<div class="gradeItem">' + 
-		'<p class="gradeLabel">Score: &nbsp;</p>' +
-		'<input type="number" min="0" class="score form-control input-sm" value="0" title="Score">' +
-		'<p>&nbsp;/&nbsp;</p>' +
-		'<input type="number" min="0" value="100" class="total form-control input-sm" tabIndex="-1" title="Total">' +
-		'<p class="breakP">&nbsp;|&nbsp;</p>' +
-		'<p class="gradeLabel">Weight: &nbsp;</p>' +
-		'<input type="number" min="0" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
-		'<p>%</p>' +
-		'<p class="breakP">&nbsp;|&nbsp;</p>' +
-		'<p class="gradeLabel">Name: &nbsp;</p>' +
-		'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
-		'<button class="btn btn-light deleteButton" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
-		'<i class="fas fa-times"></i></button>' +
-		'<p class="gradeInfo"></p>' +
-		'</div>');
+	$('#gradeItems').append(
+		'<div class="gradeItem">' + 
+			'<p class="gradeLabel">Score: &nbsp;</p>' +
+			'<input type="number" min="0" class="score form-control input-sm" value="0" title="Score">' +
+			'<p>&nbsp;/&nbsp;</p>' +
+			'<input type="number" min="0" value="100" class="total form-control input-sm" tabIndex="-1" title="Total">' +
+			'<p class="breakP">&nbsp;|&nbsp;</p>' +
+			'<p class="gradeLabel">Weight: &nbsp;</p>' +
+			'<input type="number" min="0" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
+			'<p>%</p>' +
+			'<p class="breakP">&nbsp;|&nbsp;</p>' +
+			'<p class="gradeLabel">Name: &nbsp;</p>' +
+			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
+			'<button class="btn btn-light deleteButton" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
+			'<i class="fas fa-times"></i></button>' +
+			'<p class="gradeInfo"></p>' +
+		'</div>'
+	);
 }
 
 function doCalc() {
@@ -83,13 +82,13 @@ function doCalc() {
 	}
 
 	let weightTotal = 0;
-	$('.weight').each(function(idx, val){
+	$('.weight').each( (idx, val)=> {
 		weightTotal += parseFloat($(val).val() );
 	});
 	let grade = 0;
 	invalid = false;	
 	let message = '';
-	$('.gradeItem').each(function(idx, val) {
+	$('.gradeItem').each( (idx, val)=> {
 		let item = getAssignmentGrade($(val), weightTotal);
 		if(item.invalid) {
 			invalid = true;

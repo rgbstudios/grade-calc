@@ -4,9 +4,11 @@
 
 **A simple, quick grade calculator for professors**
 
+*Use Grade Calc to calculate students' grades quickly and simply*
+
 http://rgbstudios.org/grade-calc
 
-Note: This webpage doesn't store cookies, so when you refresh or close it, your information will be gone. For the chrome app version, go [here](https://chrome.google.com/webstore/detail/amomifflklnjfjcamncbnepiakdfnjca/publish-delayed?hl=en&gl=US) or view its repo [here](https://github.com/rgbstudios/grade-calc-chrome-app)
+Note: This webpage doesn't store cookies, so when you refresh or close it, your information will be gone. For the chrome app version, go [here](https://chrome.google.com/webstore/detail/amomifflklnjfjcamncbnepiakdfnjca/publish-delayed?hl=en&gl=US) or view its repo [here](https://github.com/rgbstudios/grade-calc-chrome-app).
 
 <img src="img/screenshot.jpg">
 
@@ -47,6 +49,8 @@ Note: This webpage doesn't store cookies, so when you refresh or close it, your 
 <img src="img/graduation.svg" width="300px">
 
 ### About
+
+About cookies: We're not using cookies in order to keep the UI clean and for a consistent user experience. We also don't want graders accidently losing all of their progress upon clearing cookies. You can download your grade information as a .txt file, with more features on the way.
 
 Images from https://undraw.co
 

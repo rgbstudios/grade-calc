@@ -22,3 +22,10 @@ option to print all grade or one person's
 option to have multiple "classes" with different assignments layouts you can save
 option to use student id numbers? (nothing preventing you anyway...)
 histogram of all students' grades
+
+
+input verification
+organize js and rename html elms
+download csv of grade data for import/export
+focus top grade input upon click calc btn
+remove hover effect on grade item
