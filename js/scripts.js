@@ -104,6 +104,8 @@ function doCalc() {
 		$('#letter-text').html(getGradeLetter(grade) );
 		$('#console').val($('#student-name').val() + ' ' + grade + '% ' + getGradeLetter(grade) + '\n' + $('#console').val() );
 		$('#grade-text').html(grade + '%');
+	
+		$('.grade-item:first-child').find('.score').select();
 	}
 }
 
