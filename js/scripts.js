@@ -68,7 +68,7 @@ function makeNewDiv() {
 			'<span class="breakP">&nbsp;|&nbsp;</span>' +
 			'<span class="grade-label">Weight: &nbsp;</span>' +
 			'<input type="number" min="0" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
-			'<span>%</span>' +
+			'<span> %</span>' +
 			'<span class="breakP">&nbsp;|&nbsp;</span>' +
 			'<span class="grade-label">Name: &nbsp;</span>' +
 			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +

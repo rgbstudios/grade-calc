@@ -4,7 +4,7 @@
 
 **A simple, quick grade calculator for professors**
 
-*Use Grade Calc to calculate students' grades quickly and simply*
+*Built with simplicity, ease-of-use, and speed as top priorities*
 
 http://rgbstudios.org/grade-calc
 

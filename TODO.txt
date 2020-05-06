@@ -47,4 +47,7 @@ two btns: one for calc, one for calc&clear
 make obvious how to add new student
 record vid 30s how to use, embed in help modal on site
 rename history to record or gradebook
+move history to table modal "gradebook" with old history view and new table gradebook view like in csv
+toast/visual confirmation when adding student "entry added to gradebook"
+option for change view from compact, comfy etc
 
