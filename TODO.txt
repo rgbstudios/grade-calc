@@ -41,3 +41,4 @@ organize into multiple js files?
 save site settings
 reset site settings
 upload assignments from spreadsheet, option to add spreadsheet stuff to history console, to next spreadsheet, either append or prepend toggle. also modal for displaying all the data in grade history that would go in spreadsheet
+option to reclaulate grades after editing assignment (weight/total) from spreadsheet or history
