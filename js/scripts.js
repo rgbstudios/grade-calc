@@ -72,7 +72,7 @@ function makeNewDiv() {
 			'<span class="breakP">&nbsp;|&nbsp;</span>' +
 			'<span class="grade-label">Name: &nbsp;</span>' +
 			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
-			'<button class="btn delete-btn" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
+			'<button class="btn delete-btn" title="Delete Assignment" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
 			'<i class="fas fa-times"></i></button>' +
 			'<span class="gradeInfo"></span>' +
 		'</div>'
