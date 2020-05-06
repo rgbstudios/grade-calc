@@ -62,7 +62,7 @@ input {
 	background-color: #933;
 	color: #fff;
 }
-.delete-btn:not(.close):focus {
+.delete-btn:not(.close):focus, .btn-danger:focus {
 	border-color: #933 !important;
 	box-shadow: 2px 2px 2px #933 !important;
 }
@@ -112,7 +112,7 @@ img, button {
 	-ms-user-select: none;	
 }
 
-textarea:focus, button:not(.close):focus, input:focus {
+textarea:focus, button:not(.close):not(.btn-danger):focus, input:focus {
 	border-color: #6c6 !important;
 	box-shadow: 2px 2px 2px #6c6 !important;
 }
