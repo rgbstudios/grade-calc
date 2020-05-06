@@ -4,11 +4,6 @@ $( ()=> {
 
 	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
 
-	$('#console-collapse').on('shown.bs.collapse', (evt)=> {
-		$('html,body').prop('scrollTop', $('#console-collapse .card').offset().top);
-		$('#console').focus();
-	});
-
 	$('#speadsheet-btn').click(downloadCSV);
 
 	$('#night-btn').click( ()=> {
@@ -74,7 +69,7 @@ function makeNewDiv() {
 			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
 			'<button class="btn delete-btn" title="Delete Assignment" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
 			'<i class="fas fa-times"></i></button>' +
-			'<span class="gradeInfo"></span>' +
+			'<small><span class="grade-info"></span></small>' +
 		'</div>'
 	);
 }
@@ -111,7 +106,7 @@ function doCalc() {
 	if(invalid) {
 		$('#letter-text').html('');
 		$('#grade-text').html(message);
-		$('.gradeInfo').html('');
+		$('.grade-info').html('');
 	} else {
 		grade = Math.round(grade*100)/100;
 		$('#letter-text').html(getGradeLetter(grade) );
@@ -129,7 +124,7 @@ function getAssignmentGrade(elm, weightTotal) {
 	let scoreInput = elm.find('.score');
 	let totalInput = elm.find('.total');
 	let weightInput = elm.find('.weight');
-	let gradeInfo = elm.find('.gradeInfo');
+	let gradeInfo = elm.find('.grade-info');
 
 	if(scoreInput.val() == '' || totalInput.val() == '' || weightInput.val() == '')
 		return {invalid: true, message:'Please enter all numerical inputs and delete empty items'};

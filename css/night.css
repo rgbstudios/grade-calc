@@ -9,7 +9,7 @@ textarea {
 	background-color: transparent !important;
 	color: #fff !important;
 }
-.grade-item {
+.grade-item, #grade-result-div {
 	background: rgba(51,51,51,0.8) !important;
 }
 kbd {
