@@ -60,20 +60,20 @@ $( ()=> {
 function makeNewDiv() {
 	$('#grade-items').append(
 		'<div class="grade-item">' + 
-			'<p class="grade-label">Score: &nbsp;</p>' +
+			'<span class="grade-label">Score: &nbsp;</span>' +
 			'<input type="number" min="0" class="score form-control input-sm" value="0" title="Score">' +
-			'<p>&nbsp;/&nbsp;</p>' +
+			'<span>&nbsp;/&nbsp;</span>' +
 			'<input type="number" min="0" value="100" class="total form-control input-sm" tabIndex="-1" title="Total">' +
-			'<p class="breakP">&nbsp;|&nbsp;</p>' +
-			'<p class="grade-label">Weight: &nbsp;</p>' +
+			'<span class="breakP">&nbsp;|&nbsp;</span>' +
+			'<span class="grade-label">Weight: &nbsp;</span>' +
 			'<input type="number" min="0" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
-			'<p>%</p>' +
-			'<p class="breakP">&nbsp;|&nbsp;</p>' +
-			'<p class="grade-label">Name: &nbsp;</p>' +
+			'<span>%</span>' +
+			'<span class="breakP">&nbsp;|&nbsp;</span>' +
+			'<span class="grade-label">Name: &nbsp;</span>' +
 			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
 			'<button class="btn delete-btn" title="Delete Item" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
 			'<i class="fas fa-times"></i></button>' +
-			'<p class="gradeInfo"></p>' +
+			'<span class="gradeInfo"></span>' +
 		'</div>'
 	);
 }

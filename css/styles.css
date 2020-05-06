@@ -24,10 +24,6 @@ input {
 	width: 16rem;
 }
 
-.alert, .grade-item {
-	background-color: rgba(255,255,255,0.8);
-}
-
 /* grade divs */
 #grade-items {
 	font-weight: bold;
@@ -38,11 +34,9 @@ input {
 	box-shadow: 1px 1px 0px #999;
 	position: relative;
 	margin-bottom: 0.25rem;
+	padding-bottom: 0.5rem;
+	background-color: rgba(255,255,255,0.8);
 }
-/*.grade-item:hover {
-	border: 2px solid #6c6;
-	box-shadow: 1px 2px 1px #6c6;
-}*/
 .breakP {
 	color: #393 !important;
 	font-size: 250%;
@@ -52,16 +46,31 @@ input {
 	border: 2px solid #ccc;
 	border-radius: 0.5rem;
 	color: #933;
+
+}
+.delete-btn:not(.close) {
 	position: absolute;
 	top: -2px;
-	right: -2px;
+	right: -2px;	
+}
+.delete-btn.close {
+	opacity: 1;
 }
 .delete-btn:hover {
 	background-color: #933;
 	color: #fff;
 }
+.delete-btn:not(.close):focus {
+	border-color: #933 !important;
+	box-shadow: 2px 2px 2px #933 !important;
+}
 
-input, p, #grade-text {
+.modal-content {
+	border-radius: 0.5rem;
+}
+
+
+input, #grade-text {
 	display: inline-block;
 }
 h1 {
@@ -95,7 +104,7 @@ img, button {
 	-ms-user-select: none;	
 }
 
-textarea:focus, button:focus, input:focus {
+textarea:focus, button:not(.close):focus, input:focus {
 	border-color: #6c6 !important;
 	box-shadow: 2px 2px 2px #6c6 !important;
 }
@@ -105,11 +114,6 @@ textarea:focus, button:focus, input:focus {
 }
 
 @media screen and (max-width: 768px) {
-	.alert {
-		visibility: hidden;
-		clear: both;
-		display: none;
-	}
 	body {
 		background: #fff;
 	}

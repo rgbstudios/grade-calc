@@ -37,13 +37,12 @@
 		<button id="night-btn" title="Toggle night mode" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-moon"></i></button>
 		<button title="Reset everything" data-toggle="popover" class="btn btn-default" tabindex="-1" onclick="location.reload();"><i class="fas fa-sync-alt"></i></button>
 		<button id="fullscreen-btn" title="Toggle fullscreen" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-arrows-alt"></i></button>
+		<span data-toggle="modal" data-target="#info-modal"><button id="info-btn" title="Website information, usage tips, and help" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-info-circle"></i></button></span>
 	</div>
 </div>
 
-<div class="alert alert-success alert-dismissible my-4">
-  <button type="button" class="delete-btn btn btn-sm" data-dismiss="alert" tabindex="-1"><i class="fas fa-times"></i></button>
-  <p><i class="fas fa-info-circle"></i> Use <kbd>tab</kbd> and <kbd>shift</kbd> + <kbd>tab</kbd> to quickly edit students' grades</p>
-</div>
+
+
 
 <div id="grade-items"></div>
 
@@ -73,9 +72,24 @@
 	</div>
 </div>
 
-<br>
-
-<p>Read about this project <a tabindex="-1" href="https://github.com/rgbstudios/grade-calc/blob/master/README.md" target="_blank">here</a>
+<div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="info-modal-title" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="info-modal-title"><i class="fas fa-info-circle"></i> Info</h5>
+				<button type="button" class="close delete-btn" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p><i class="fas fa-info-circle"></i> Use <kbd>tab</kbd> and <kbd>shift</kbd> + <kbd>tab</kbd> to quickly edit students' grades</p>
+			</div>
+			<div class="modal-footer">
+				<p>Read about this project <a tabindex="-1" href="https://github.com/rgbstudios/grade-calc/blob/master/README.md" target="_blank">here</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 </div>
 
