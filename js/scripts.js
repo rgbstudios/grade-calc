@@ -12,15 +12,13 @@ function doCalc() {
 		weightTotal += parseFloat($(val).val() );
 	});
 	let grade = 0;
-	invalid = false;	
-	let message = '';
+	invalid = false;
 
 	let gradeHistoryData = [$('#student-name').val()];
 	$('.grade-item').each( (idx, val)=> {
 		let item = getAssignmentGrade($(val), weightTotal);
 		if(item.invalid) {
 			invalid = true;
-			message = item.message;
 		 } else {
 			grade += item.grade;
 
@@ -31,7 +29,7 @@ function doCalc() {
 
 	if(invalid) {
 		$('#letter-text').html('');
-		$('#grade-text').html(message);
+		$('#grade-text').html('Please enter all numerical inputs and delete empty items');
 		$('.grade-info').html('');
 	} else {
 		grade = Math.round(grade*100)/100;
@@ -45,7 +43,7 @@ function doCalc() {
 	}
 }
 
-// returns array of isValid, grade if valid, message otherwise
+// returns array of isValid, grade if valid
 function getAssignmentGrade(elm, weightTotal) {
 	let scoreInput = elm.find('.score');
 	let totalInput = elm.find('.total');
@@ -53,7 +51,7 @@ function getAssignmentGrade(elm, weightTotal) {
 	let gradeInfo = elm.find('.grade-info');
 
 	if(scoreInput.val() == '' || totalInput.val() == '' || weightInput.val() == '')
-		return {invalid: true, message:'Please enter all numerical inputs and delete empty items'};
+		return {invalid: true};
 
 	let newVal = scoreInput.val() / totalInput.val() * weightInput.val() / weightTotal * 100;
 	gradeInfo.html('&nbsp; Points: ' + Math.round(newVal*100)/100 + '% Grade: ' + Math.round(scoreInput.val()/totalInput.val()*10000)/100 + '%');
