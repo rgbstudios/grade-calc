@@ -56,6 +56,7 @@ input {
 .delete-btn.close {
 	opacity: 1;
 	text-shadow: none !important;
+	border-radius: 0.4rem; /*hotfix for modals*/
 }
 .delete-btn:hover {
 	background-color: #933;
