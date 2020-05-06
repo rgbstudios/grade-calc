@@ -4,6 +4,12 @@ $( ()=> {
 
 	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
 
+	// $('#history-collapse').collapse();
+	$('#console-collapse').on('shown.bs.collapse', (evt)=> {
+		$('html,body').prop('scrollTop', $('#console-collapse .card').offset().top);
+		$('#console').focus();
+	});
+
 	$('#night-btn').click( ()=> {
 		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
 	});
@@ -39,9 +45,9 @@ $( ()=> {
 	
 	$('#download-console-btn').click( ()=> {		
 		let data = [($('#console').val().replace(/\r?\n/g, '\r\n'))];		
-		properties = {type: 'plain/text'};
+		let properties = {type: 'plain/text'};
 		try {
-			file = new File(data, "grades.txt", properties);
+			file = new File(data, 'grades.txt', properties);
 		} catch(e) {
 			file = new Blob(data, properties);
 		}

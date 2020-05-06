@@ -1,6 +1,9 @@
 * {
 	text-align: center;
 }
+html {
+	scroll-behavior: smooth;
+}
 body {
 	background: #fff url("../img/teacher-light.svg") no-repeat fixed center;
 	padding: 1rem;
@@ -72,8 +75,10 @@ a {
 	width: 64px;
 }
 #download-link {
-	width: 0;
 	text-decoration: none;
+}
+#download-console-btn {
+	width: 100%;
 }
 
 ::selection {

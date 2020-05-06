@@ -60,14 +60,19 @@
 <h3 id="letter-text"></h3>
 <hr>
 
-<h4><i class="fas fa-history"></i> History</h4>
 
-<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
-<a id="download-link" target="_blank" download="stats.txt">
-<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download History</button>
-</a>
+<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#console-collapse" aria-expanded="false" aria-controls="console-collapse">
+<i class="fas fa-history"></i> History
+</button>
+<div class="collapse" id="console-collapse">
+	<div class="card card-body">
+		<textarea id="console" class="form-control" rows="5"></textarea>
+		<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
+		<a id="download-link" target="_blank" download="grades.txt">
+		<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download History</button></a>
+	</div>
+</div>
 
-<textarea id="console" class="form-control" rows="5"></textarea>
 <br>
 
 <p>Read about this project <a tabindex="-1" href="https://github.com/rgbstudios/grade-calc/blob/master/README.md" target="_blank">here</a>
