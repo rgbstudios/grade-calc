@@ -37,3 +37,7 @@ setting to display percentage as floating point without percent sign (ex. 0.876 
 put alert and read more link in another modal, option to display history in modal only or on page as well
 checkbox to select entire input upon click
 show more buttons checkbox for stuff like copy history, fullscreen btn at top, more inputs etc
+organize into multiple js files?
+save site settings
+reset site settings
+upload assignments from spreadsheet, option to add spreadsheet stuff to history console, to next spreadsheet, either append or prepend toggle. also modal for displaying all the data in grade history that would go in spreadsheet
