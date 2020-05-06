@@ -42,3 +42,9 @@ save site settings
 reset site settings
 upload assignments from spreadsheet, option to add spreadsheet stuff to history console, to next spreadsheet, either append or prepend toggle. also modal for displaying all the data in grade history that would go in spreadsheet
 option to reclaulate grades after editing assignment (weight/total) from spreadsheet or history
+two btns: one for calc, one for calc&clear
+"calculate" doesnt mean add to database, rename calc and record or something
+make obvious how to add new student
+record vid 30s how to use, embed in help modal on site
+rename history to record or gradebook
+

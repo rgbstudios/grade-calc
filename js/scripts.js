@@ -4,7 +4,6 @@ $( ()=> {
 
 	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
 
-	// $('#history-collapse').collapse();
 	$('#console-collapse').on('shown.bs.collapse', (evt)=> {
 		$('html,body').prop('scrollTop', $('#console-collapse .card').offset().top);
 		$('#console').focus();
