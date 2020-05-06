@@ -31,18 +31,13 @@
 <div class="row">
 	<div class="col-md-9 col-sm-12 my-2">
 		<img src="img/icon.svg" width="64px"></img>
-		<h1>Quick Grade Calculator <sub>for professors</sub></h1>
+		<h1>Grade Calculator <sub>for professors</sub></h1>
 	</div>
 	<div class="col-md-3 col-sm-12 my-2">
-		<button id="night-btn" title="Toggle night mode" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-moon"></i></button>
-		<button title="Reset everything" data-toggle="popover" class="btn btn-default" tabindex="-1" onclick="location.reload();"><i class="fas fa-sync-alt"></i></button>
-		<button id="fullscreen-btn" title="Toggle fullscreen" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-arrows-alt"></i></button>
-		<span data-toggle="modal" data-target="#info-modal"><button id="info-btn" title="Website information, usage tips, and help" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-info-circle"></i></button></span>
+		<span data-toggle="modal" data-target="#info-modal"><button title="Website information, usage tips, and help" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-info-circle"></i></button></span>
+		<span data-toggle="modal" data-target="#settings-modal"><button title="Website settings" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-cog"></i></button></span>
 	</div>
 </div>
-
-
-
 
 <div id="grade-items"></div>
 
@@ -86,6 +81,27 @@
 			</div>
 			<div class="modal-footer">
 				<p>Read about this project <a tabindex="-1" href="https://github.com/rgbstudios/grade-calc/blob/master/README.md" target="_blank">here</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="settings-modal" tabindex="-1" role="dialog" aria-labelledby="settings-modal-title" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="settings-modal-title"><i class="fas fa-cog"></i> Settings</h5>
+				<button type="button" class="close delete-btn" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+			<div class="modal-footer">
+				<button id="night-btn" title="Toggle night mode" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-moon"></i> Night</button>
+				<button title="Reset everything" data-toggle="popover" class="btn btn-default" tabindex="-1" onclick="location.reload();"><i class="fas fa-sync-alt"></i> Reset</button>
+				<button id="fullscreen-btn" title="Toggle fullscreen" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-arrows-alt"></i> Fullscreen</button>
 			</div>
 		</div>
 	</div>
