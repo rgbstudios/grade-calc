@@ -63,6 +63,12 @@ $( ()=> {
 		}
 	});
 
+	$('#clear-oncalc-switch').change( ()=> {
+		$('#calc-btn').html('Calculate ' + 
+			($('#clear-oncalc-switch').is(':checked')?'and Clear ':'') + 
+			'<i class="fas fa-chevron-circle-right"></i>');
+	});
+
 });
 
 function makeNewDiv() {

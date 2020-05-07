@@ -29,7 +29,7 @@ function doCalc() {
 
 	if(invalid) {
 		$('#letter-text').html('');
-		$('#warning-text').html('Please enter all numerical inputs and delete empty items');
+		$('#warning-text').html('Please enter all numerical inputs and delete empty items. Numbers must be positive.');
 		$('#grade-text').html('');
 		$('#copy-btn').hide();
 		$('.grade-info').html('');
@@ -45,6 +45,10 @@ function doCalc() {
 
 		gradeData.push(grade);	
 		updateGradebook(gradeData);
+
+		if($('#clear-oncalc-switch').is(':checked') ) {
+			$('#clear-btn').click();
+		}
 
 		$('.grade-item:first-child').find('.score').select();
 	}

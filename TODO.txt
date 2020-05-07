@@ -15,8 +15,6 @@ make a large number of items at once with same weight/category
 !!display number of items
 !!if a blank item then ignore, and button to delete all blank items
 !!and if no weights assume equal
-!!console with number, letter, and name/id (optional)
-!!checkbox to clear grades and name with each calculation
 option to add one assignment to all students (grade doesn't change)
 option to print all grade or one person's
 option to have multiple "classes" with different assignments layouts you can save
@@ -25,6 +23,7 @@ histogram of all students' grades
 
 
 input verification
+option for both name and ID (as opposed to one)
 download csv of grade data for import/export
 display if there are no assingments? vector graphic of no assingments here
 error messages in seperate display and different css, instead of in grade result display
@@ -40,7 +39,6 @@ save site settings
 reset site settings
 upload assignments from spreadsheet, option to add spreadsheet stuff to history console, to next spreadsheet, either append or prepend toggle. also modal for displaying all the data in grade history that would go in spreadsheet
 option to reclaulate grades after editing assignment (weight/total) from spreadsheet or history
-two btns: one for calc, one for calc&clear
 "calculate" doesnt mean add to database, rename calc and record or something
 make obvious how to add new student
 record vid 30s how to use, embed in help modal on site
