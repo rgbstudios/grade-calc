@@ -62,3 +62,10 @@ option to make everything tabbable
 checkbox for use autocorrect
 export settings to txt file? save in cookies?
 specific errors for if numbers are negative, weights are missing etc (more helpful messages)
+
+chart ideas:
+student: barchart with 2 sections per bar, each bar is assignment where top of bar is percentage of grade, and bar is filled with percentage on assignment
+assignments: pie chart of assignment percentages worth of total grade
+assignment: bar chart/histogram of students' scores
+assignments: barchart like that of student, but for averages and 1 standard deviation deviation (maybe just use box plots)
+
