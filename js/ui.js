@@ -49,7 +49,7 @@ $( ()=> {
 		} catch(e) {
 			file = new Blob(data, properties);
 		}
-		$('#download-link').prop('download', 'grade console ' + getFormattedDate() + '.txt');
+		$('#download-link').prop('download', 'grade_history_' + getFormattedDate() + '.txt');
 		$('#download-link').prop('href', URL.createObjectURL(file) );
 	});
 

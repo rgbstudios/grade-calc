@@ -58,6 +58,13 @@
 <h3 id="letter-text"></h3>
 </div>
 
+<hr>
+
+<textarea id="console" class="form-control" rows="3"></textarea>
+<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-light mt-1" tabindex="-1"><i class="fas fa-backspace"></i> Clear</button>
+<a id="download-link" class="d-inline-block" target="_blank" download="grades.txt">
+<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-light ml-1 mt-1" tabindex="-1"><i class="fas fa-download"></i> Download</button></a>
+
 <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="info-modal-title" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -116,7 +123,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<div class="accordion" id="accordionExample">
+				<div class="accordion" id="gradebook-accordion">
 					<div class="card">
 						<div class="card-header" id="assignments-heading">
 							<h2 class="mb-0">
@@ -127,7 +134,7 @@
 						</div>
 
 						<!-- use "show" class to default to open -->
-						<div id="assignments-collapse" class="collapse" aria-labelledby="assignments-heading" data-parent="#accordionExample">
+						<div id="assignments-collapse" class="collapse" aria-labelledby="assignments-heading" data-parent="#gradebook-accordion">
 							<div class="card-body">
 								<table id="assignments-table" class="table table-bordered">
 									<tr class="thead-dark">
@@ -147,7 +154,7 @@
 								</button>
 							</h2>
 						</div>
-						<div id="students-collapse" class="collapse" aria-labelledby="students-heading" data-parent="#accordionExample">
+						<div id="students-collapse" class="collapse" aria-labelledby="students-heading" data-parent="#gradebook-accordion">
 							<div class="card-body">
 								<table id="students-table" class="table table-bordered">
 									<tr class="thead-dark">
@@ -162,19 +169,16 @@
 						</div>
 					</div>
 					<div class="card">
-						<div class="card-header" id="history-heading">
+						<div class="card-header" id="insights-heading">
 							<h2 class="mb-0">
-								<button class="btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#history-collapse" aria-expanded="false" aria-controls="history-collapse">
-									<i class="fas fa-history"></i> History
+								<button class="btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#insights-collapse" aria-expanded="false" aria-controls="insights-collapse">
+									<i class="fas fa-chart-bar"></i> Insights
 								</button>
 							</h2>
 						</div>
-						<div id="history-collapse" class="collapse" aria-labelledby="history-heading" data-parent="#accordionExample">
+						<div id="insights-collapse" class="collapse" aria-labelledby="insights-heading" data-parent="#gradebook-accordion">
 							<div class="card-body">
-								<textarea id="console" class="form-control" rows="5"></textarea>
-								<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
-								<a id="download-link" target="_blank" download="grades.txt">
-								<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-download"></i> Download History</button></a>
+								Coming Soon...
 							</div>
 						</div>
 					</div>
