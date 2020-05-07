@@ -12,6 +12,8 @@ $( ()=> {
 		makeNewDiv();
 	}
 
+	$('#copy-btn').hide();
+
 	$('#add-btn').click(makeNewDiv);
 
 	$('#clear-btn').click( ()=> {

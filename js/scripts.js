@@ -29,13 +29,17 @@ function doCalc() {
 
 	if(invalid) {
 		$('#letter-text').html('');
-		$('#grade-text').html('Please enter all numerical inputs and delete empty items');
+		$('#warning-text').html('Please enter all numerical inputs and delete empty items');
+		$('#grade-text').html('');
+		$('#copy-btn').hide();
 		$('.grade-info').html('');
 	} else {
 		grade = Math.round(grade*100)/100;
 		$('#letter-text').html(getGradeLetter(grade) );
 		$('#console').val($('#student-name').val() + ' ' + grade + '% ' + getGradeLetter(grade) + '\n' + $('#console').val() );
+		$('#warning-text').html('');
 		$('#grade-text').html(grade + '%');
+		$('#copy-btn').show();
 	
 		$('.grade-item:first-child').find('.score').select();
 
