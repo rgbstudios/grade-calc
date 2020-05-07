@@ -17,7 +17,7 @@
 <meta id="metaColor3" name="apple-mobile-web-app-status-bar-style" content="#393">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 
@@ -31,8 +31,8 @@
 		<h1>Grade Calculator <sub>for professors</sub></h1>
 	</div>
 	<div class="col-md-3 col-sm-12 my-2">
-		<span data-toggle="modal" data-target="#info-modal"><button title="Website information, usage tips, and help" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-info-circle"></i></button></span>
-		<span data-toggle="modal" data-target="#settings-modal"><button title="Website settings" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-cog"></i></button></span>
+		<span data-toggle="modal" data-target="#info-modal"><button title="Website information, usage tips, and help" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-info-circle"></i></button></span>
+		<span data-toggle="modal" data-target="#settings-modal"><button title="Website settings" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-cog"></i></button></span>
 		<span data-toggle="modal" data-target="#gradebook-modal"><button title="View gradebook (grade history and assignments)" data-toggle="popover" class="btn btn-dark mt-1" tabindex="-1"><i class="fas fa-book"></i> Gradebook</button></span>
 	</div>
 </div>
@@ -88,13 +88,19 @@
 				</button>
 			</div>
 			<div class="modal-body">
+				<p>Website Usage:</p>
+				<div class="custom-control custom-switch">
+					<input type="checkbox" class="custom-control-input" id="select-onclick-switch">
+					<label class="custom-control-label" for="select-onclick-switch">Select input text on click</label>
+				</div>
+
 				<p class="mt-4">Danger:</p>
 				<button id="remove-all-btn" title="Remove all assignments" data-toggle="popover" class="btn btn-danger" tabindex="-1"><i class="fas fa-trash"></i> Remove All Assignments</button>
 			</div>
 			<div class="modal-footer">
-				<button id="night-btn" title="Toggle night mode" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-moon"></i> Night</button>
-				<button title="Reset everything" data-toggle="popover" class="btn btn-default" tabindex="-1" onclick="location.reload();"><i class="fas fa-sync-alt"></i> Reset</button>
-				<button id="fullscreen-btn" title="Toggle fullscreen" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-arrows-alt"></i> Fullscreen</button>
+				<button id="night-btn" title="Toggle night mode" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-moon"></i> Night</button>
+				<button title="Reload page and reset everything" data-toggle="popover" class="btn btn-light" tabindex="-1" onclick="location.reload();"><i class="fas fa-sync-alt"></i> Reset</button>
+				<button id="fullscreen-btn" title="Toggle fullscreen" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-arrows-alt"></i> Fullscreen</button>
 			</div>
 		</div>
 	</div>
@@ -166,9 +172,9 @@
 						<div id="history-collapse" class="collapse" aria-labelledby="history-heading" data-parent="#accordionExample">
 							<div class="card-body">
 								<textarea id="console" class="form-control" rows="5"></textarea>
-								<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
+								<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
 								<a id="download-link" target="_blank" download="grades.txt">
-								<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download History</button></a>
+								<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-light" tabindex="-1"><i class="fas fa-download"></i> Download History</button></a>
 							</div>
 						</div>
 					</div>
@@ -186,7 +192,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <script src="js/ui.js"></script>
 <script src="js/scripts.js"></script>

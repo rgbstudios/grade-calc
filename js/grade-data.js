@@ -103,7 +103,7 @@ function downloadCSV() {
 
 	let link = document.createElement('a');
 	link.setAttribute('href', encodedUri);
-	link.setAttribute('download', 'grade_data.csv');
+	link.setAttribute('download', 'grade_data_' + getFormattedDate() + '.csv');
 	document.body.appendChild(link); // for firefox
 	link.click();
 }

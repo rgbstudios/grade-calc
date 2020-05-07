@@ -35,9 +35,7 @@ add animations to hover on btns
 setting for copy btn copyies letter, percentage, or both
 setting to display percentage as floating point without percent sign (ex. 0.876 instead of 87.6%)
 put alert and read more link in another modal, option to display history in modal only or on page as well
-checkbox to select entire input upon click
 show more buttons checkbox for stuff like copy history, fullscreen btn at top, more inputs etc
-organize into multiple js files?
 save site settings
 reset site settings
 upload assignments from spreadsheet, option to add spreadsheet stuff to history console, to next spreadsheet, either append or prepend toggle. also modal for displaying all the data in grade history that would go in spreadsheet
@@ -60,4 +58,7 @@ round data in grade-data?
 option to download csv of only assignments or only grades
 upload csv to import assignments and keep working (add on student data or start fresh) modal prompt upon upload
 open in google sheets (instead of downloading) btn
-fix tab indices? important for assistive tech...
+option to make everything tabbable
+checkbox for use autocorrect
+export settings to txt file? save in cookies?
+specific errors for if numbers are negative, weights are missing etc (more helpful messages)

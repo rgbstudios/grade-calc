@@ -57,6 +57,12 @@ $( ()=> {
 		$('.grade-item').remove();
 	});
 
+	$('input').click( (evt)=> {
+		if($('#select-onclick-switch').is(':checked') ) {
+			$(evt.target).select();
+		}
+	});
+
 });
 
 function makeNewDiv() {

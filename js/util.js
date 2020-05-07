@@ -28,7 +28,7 @@ function getFormattedDate() {
 	let mon = today.getMonth()+1; // Jan is 0
 	day = day < 10 ? '0' + day : day;
 	mon = mon < 10 ? '0' + mon : mon;
-	return mon + '/' + day + '/' + today.getFullYear();	
+	return mon + '_' + day + '_' + today.getFullYear();	
 }
 
 function toggleFullscreen() {

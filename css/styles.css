@@ -54,7 +54,7 @@ input {
 	right: -2px;	
 }
 .delete-btn.close {
-	opacity: 1;
+	opacity: 1 !important;
 	text-shadow: none !important;
 	border-radius: 0.4rem; /*hotfix for modals*/
 }
