@@ -45,15 +45,16 @@ function doCalc() {
 
 // returns array of isValid, grade if valid
 function getAssignmentGrade(elm, weightTotal) {
-	let scoreInput = elm.find('.score');
-	let totalInput = elm.find('.total');
-	let weightInput = elm.find('.weight');
-	let gradeInfo = elm.find('.grade-info');
+	let score = elm.find('.score').val();
+	let total = elm.find('.total').val();
+	let weight = elm.find('.weight').val();
 
-	if(scoreInput.val() == '' || totalInput.val() == '' || weightInput.val() == '')
+	if(score == '' || total == '' || weight == '')
 		return {invalid: true};
 
-	let newVal = scoreInput.val() / totalInput.val() * weightInput.val() / weightTotal * 100;
-	gradeInfo.html('&nbsp; Points: ' + Math.round(newVal*100)/100 + '% Grade: ' + Math.round(scoreInput.val()/totalInput.val()*10000)/100 + '%');
+	let newVal = score / total * weight / weightTotal * 100;
+	elm.find('.grade-info').html('&nbsp; Points: ' + Math.round(newVal*100)/100 + '% Grade: ' + Math.round(score/total*10000)/100 + '%');
 	return {invalid: false, grade: newVal};
 }
+
+// const isValid = (num, min=0, max=Infinity)=> !isNaN(num) && num!=Infinity && num >= min && num <= max;

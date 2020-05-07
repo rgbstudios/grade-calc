@@ -50,4 +50,4 @@ rename history to record or gradebook
 move history to table modal "gradebook" with old history view and new table gradebook view like in csv
 toast/visual confirmation when adding student "entry added to gradebook"
 option for change view from compact, comfy etc
-
+use arcs to display percentages for assignments
