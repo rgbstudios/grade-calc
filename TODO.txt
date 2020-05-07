@@ -51,3 +51,13 @@ move history to table modal "gradebook" with old history view and new table grad
 toast/visual confirmation when adding student "entry added to gradebook"
 option for change view from compact, comfy etc
 use arcs to display percentages for assignments
+option for graphs. pie graph of what their grade is composed of. export to img.
+update assignments btn to update table other than on calc
+edit assignments and save or discard changes?
+use angular for syncing data between tables and divs, creating new divs etc
+option to display letter grade or not
+round data in grade-data?
+option to download csv of only assignments or only grades
+upload csv to import assignments and keep working (add on student data or start fresh) modal prompt upon upload
+open in google sheets (instead of downloading) btn
+fix tab indices? important for assistive tech...

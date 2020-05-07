@@ -6,6 +6,7 @@ $( ()=> {
 
 	$('#night-btn').click( ()=> {
 		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
+		$('.table').toggleClass('table-dark');
 	});
 
 	for(let i=0; i<3; i++) {
@@ -25,9 +26,10 @@ $( ()=> {
 	$('#fullscreen-btn').click(toggleFullscreen);
 
 	$('#same-btn').click( ()=> {
+		// note: could just set them all to 100...
 		let weightInputs = $('.weight');
 		for(input of weightInputs)
-			input.value = 100/weightInputs.length;
+			$(input).val(round(100/weightInputs.length) );
 	});
 
 	$('#copy-btn').click( ()=> {

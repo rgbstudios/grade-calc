@@ -33,13 +33,16 @@
 	<div class="col-md-3 col-sm-12 my-2">
 		<span data-toggle="modal" data-target="#info-modal"><button title="Website information, usage tips, and help" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-info-circle"></i></button></span>
 		<span data-toggle="modal" data-target="#settings-modal"><button title="Website settings" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-cog"></i></button></span>
-		<span data-toggle="modal" data-target="#gradebook-modal"><button title="View gradebook (grade history and assignments)" data-toggle="popover" class="btn btn-dark" tabindex="-1"><i class="fas fa-book"></i> Gradebook</button></span>
+		<span data-toggle="modal" data-target="#gradebook-modal"><button title="View gradebook (grade history and assignments)" data-toggle="popover" class="btn btn-dark mt-1" tabindex="-1"><i class="fas fa-book"></i> Gradebook</button></span>
 	</div>
 </div>
 
 <div id="grade-items"></div>
 
-<input id="student-name"  maxlength="50" type="text" class="form-control input-sm" placeholder="Student Name (optional)"></input>
+<div class="text-left mb-4">
+<label for="student-name">Student:</label>
+<input id="student-name"  maxlength="50" type="text" class="form-control input-sm d-inline-block" placeholder="Name or ID (optional)"></input>
+</div>
 
 <button id="add-btn" title="Add a new assignment" data-toggle="popover" class="btn btn-secondary" tabindex="-1"><i class="fas fa-plus"></i> New Item</button>
 <button id="clear-btn" title="Clear all grades" data-toggle="popover" class="btn btn-secondary" tabindex="-1"><i class="fas fa-eraser"></i> Clear</button>
@@ -85,8 +88,6 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<p>Grade Data:</p>
-				<button id="speadsheet-btn" title="Download all grade data as spreadsheet" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download Grades</button>
 				<p class="mt-4">Danger:</p>
 				<button id="remove-all-btn" title="Remove all assignments" data-toggle="popover" class="btn btn-danger" tabindex="-1"><i class="fas fa-trash"></i> Remove All Assignments</button>
 			</div>
@@ -100,7 +101,7 @@
 </div>
 
 <div class="modal fade" id="gradebook-modal" tabindex="-1" role="dialog" aria-labelledby="gradebook-modal-title" aria-hidden="true">
-	<div class="modal-dialog" role="document">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="gradebook-modal-title"><i class="fas fa-book"></i> Gradebook</h5>
@@ -109,23 +110,73 @@
 				</button>
 			</div>
 			<div class="modal-body">
+				<div class="accordion" id="accordionExample">
+					<div class="card">
+						<div class="card-header" id="assignments-heading">
+							<h2 class="mb-0">
+								<button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#assignments-collapse" aria-expanded="true" aria-controls="assignments-collapse">
+									<i class="fas fa-archive"></i> Assignments
+								</button>
+							</h2>
+						</div>
 
-
-				<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#console-collapse" aria-expanded="false" aria-controls="console-collapse">
-				<i class="fas fa-history"></i> History
-				</button>
-				<div class="collapse show" id="console-collapse">
-					<div class="card card-body">
-						<textarea id="console" class="form-control" rows="5"></textarea>
-						<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
-						<a id="download-link" target="_blank" download="grades.txt">
-						<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download History</button></a>
+						<!-- use "show" class to default to open -->
+						<div id="assignments-collapse" class="collapse" aria-labelledby="assignments-heading" data-parent="#accordionExample">
+							<div class="card-body">
+								<table id="assignments-table" class="table table-bordered">
+									<tr class="thead-dark">
+										<th>Assignment Name</th>
+										<th>Assignment Total</th>
+										<th>Assignment Weights</th>
+									</tr>
+								</table>
+							</div>
+						</div>
 					</div>
-				</div>
+					<div class="card">
+						<div class="card-header" id="students-heading">
+							<h2 class="mb-0">
+								<button class="btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#students-collapse" aria-expanded="false" aria-controls="students-collapse">
+									<i class="fas fa-users"></i> Students
+								</button>
+							</h2>
+						</div>
+						<div id="students-collapse" class="collapse" aria-labelledby="students-heading" data-parent="#accordionExample">
+							<div class="card-body">
+								<table id="students-table" class="table table-bordered">
+									<tr class="thead-dark">
+										<th>Student Name</th>
+										<th>Assignment 1</th>
+										<th>Assignment 2</th>
+										<th>Assignment 3</th>
+										<th>Final Grade</th>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="history-heading">
+							<h2 class="mb-0">
+								<button class="btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#history-collapse" aria-expanded="false" aria-controls="history-collapse">
+									<i class="fas fa-history"></i> History
+								</button>
+							</h2>
+						</div>
+						<div id="history-collapse" class="collapse" aria-labelledby="history-heading" data-parent="#accordionExample">
+							<div class="card-body">
+								<textarea id="console" class="form-control" rows="5"></textarea>
+								<button id="clear-console-btn" title="Clear history text" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-backspace"></i> Clear History</button>
+								<a id="download-link" target="_blank" download="grades.txt">
+								<button id="download-console-btn" title="Download history to txt file" data-toggle="popover" class="btn btn-default" tabindex="-1"><i class="fas fa-download"></i> Download History</button></a>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end accordion -->
 
 			</div>
 			<div class="modal-footer">
-				
+				<button id="speadsheet-btn" title="Download all grade data as spreadsheet" data-toggle="popover" class="btn btn-secondary" tabindex="-1"><i class="fas fa-download"></i> Download Grades</button>				
 			</div>
 		</div>
 	</div>

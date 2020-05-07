@@ -64,7 +64,10 @@ input {
 }
 .delete-btn:not(.close):focus, .btn-danger:focus {
 	border-color: #933 !important;
-	box-shadow: 2px 2px 2px #933 !important;
+	box-shadow: 2px 2px 0px #933, 
+		-2px -2px 0px #933,
+		2px -2px 0px #933,
+		-2px 2px 0px #933 !important;
 }
 
 .modal-content {
@@ -112,9 +115,12 @@ img, button {
 	-ms-user-select: none;	
 }
 
-textarea:focus, button:not(.close):not(.btn-danger):focus, input:focus {
+textarea:focus, button:not(.close):not(.btn-danger):not(.delete-btn):focus, input:focus {
 	border-color: #6c6 !important;
-	box-shadow: 2px 2px 2px #6c6 !important;
+	box-shadow: 2px 2px 0px #6c6, 
+		-2px -2px 0px #6c6,
+		2px -2px 0px #6c6,
+		-2px 2px 0px #6c6 !important;
 }
 
 .popover-body {

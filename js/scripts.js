@@ -14,18 +14,18 @@ function doCalc() {
 	let grade = 0;
 	invalid = false;
 
-	let gradeHistoryData = [$('#student-name').val()];
+	let studentName = checkDefault($('#student-name').val(), 'Anonymous');
+	let gradeData = [studentName];
 	$('.grade-item').each( (idx, val)=> {
-		let item = getAssignmentGrade($(val), weightTotal);
-		if(item.invalid) {
+		let assignmentGrade = getAssignmentGrade($(val), weightTotal);
+		if(assignmentGrade == -1) {
 			invalid = true;
 		 } else {
-			grade += item.grade;
+			grade += assignmentGrade;
 
-			gradeHistoryData.push($(val).find('.score').val() );
+			gradeData.push(parseFloat($(val).find('.score').val() ) );
 		}
 	});
-	gradeHistoryData.push(grade);
 
 	if(invalid) {
 		$('#letter-text').html('');
@@ -34,31 +34,32 @@ function doCalc() {
 		$('#copy-btn').hide();
 		$('.grade-info').html('');
 	} else {
-		grade = Math.round(grade*100)/100;
-		$('#letter-text').html(getGradeLetter(grade) );
-		$('#console').val($('#student-name').val() + ' ' + grade + '% ' + getGradeLetter(grade) + '\n' + $('#console').val() );
+		grade = round(grade);
+		let letterGrade = getGradeLetter(grade);
+
+		$('#letter-text').html(letterGrade);
+		$('#console').val(studentName + ' ' + grade + '% ' + letterGrade + '\n' + $('#console').val() );
 		$('#warning-text').html('');
 		$('#grade-text').html(grade + '%');
 		$('#copy-btn').show();
-	
-		$('.grade-item:first-child').find('.score').select();
 
-		addGradeHistory(gradeHistoryData);
+		gradeData.push(grade);	
+		updateGradebook(gradeData);
+
+		$('.grade-item:first-child').find('.score').select();
 	}
 }
 
-// returns array of isValid, grade if valid
+// return grade if valid, else -1
+// update grade-info display
 function getAssignmentGrade(elm, weightTotal) {
-	let score = elm.find('.score').val();
-	let total = elm.find('.total').val();
-	let weight = elm.find('.weight').val();
+	let score = parseFloat(elm.find('.score').val() );
+	let total = parseFloat(elm.find('.total').val() );
+	let weight = parseFloat(elm.find('.weight').val() );
 
-	if(score == '' || total == '' || weight == '')
-		return {invalid: true};
+	if(!isValid(score) || !isValid(total) || !isValid(weight) ) return -1;
 
-	let newVal = score / total * weight / weightTotal * 100;
-	elm.find('.grade-info').html('&nbsp; Points: ' + Math.round(newVal*100)/100 + '% Grade: ' + Math.round(score/total*10000)/100 + '%');
-	return {invalid: false, grade: newVal};
+	let assignmentGrade = score / total * weight / weightTotal * 100;
+	elm.find('.grade-info').html('<br>Points: ' + round(assignmentGrade) + '% Grade: ' + round(score/total*100) + '%');
+	return assignmentGrade;
 }
-
-// const isValid = (num, min=0, max=Infinity)=> !isNaN(num) && num!=Infinity && num >= min && num <= max;

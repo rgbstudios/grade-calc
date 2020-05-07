@@ -64,3 +64,11 @@ function copyText(str) {
 	document.execCommand('copy');
 	tmp.remove();
 }
+
+const checkDefault =(val, defaultVal, condition='')=> 
+	val == condition ? defaultVal : val;
+
+const isValid = (num, min=0, max=Infinity)=> 
+	!isNaN(num) && num!=Infinity && num >= min && num <= max;
+
+const round = (num, places=4)=> Number( (num).toFixed(places) );
