@@ -2,7 +2,10 @@ $( ()=> {
 
 	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
 
-	$('#speadsheet-btn').click(downloadCSV);
+	$('#download-spreadsheet-btn').click(downloadCSV);
+	$('#upload-spreadsheet-btn').click(uploadCSV);
+
+	$('#spreadsheet-file-input').change(readCSV);
 
 	$('#night-btn').click( ()=> {
 		$('#nightTheme').attr('href', $('#nightTheme').attr('href')?'':'css/night.css');
@@ -26,10 +29,8 @@ $( ()=> {
 	$('#fullscreen-btn').click(toggleFullscreen);
 
 	$('#same-btn').click( ()=> {
-		// note: could just set them all to 100...
-		let weightInputs = $('.weight');
-		for(input of weightInputs)
-			$(input).val(round(100/weightInputs.length) );
+		$('.weight').val(100);
+		// $('.weight').val(round(100/$('.weight').length) );
 	});
 
 	$('#copy-btn').click( ()=> {
@@ -71,23 +72,22 @@ $( ()=> {
 
 });
 
-function makeNewDiv() {
+function makeNewDiv(score=0, total=100, weight=100, name='') {
 	$('#grade-items').append(
-		'<div class="grade-item">' + 
-			'<span class="grade-label">Score: &nbsp;</span>' +
-			'<input type="number" min="0" class="score form-control input-sm" value="0" title="Score">' +
-			'<span>&nbsp;/&nbsp;</span>' +
-			'<input type="number" min="0" value="100" class="total form-control input-sm" tabIndex="-1" title="Total">' +
-			'<span class="breakP">&nbsp;|&nbsp;</span>' +
-			'<span class="grade-label">Weight: &nbsp;</span>' +
-			'<input type="number" min="0" class="weight form-control input-sm" tabIndex="-1" title="Weight (should add to 100%)">' +
-			'<span> %</span>' +
-			'<span class="breakP">&nbsp;|&nbsp;</span>' +
-			'<span class="grade-label">Name: &nbsp;</span>' +
-			'<input type="text" class="name form-control input-sm" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">' +
-			'<button class="btn delete-btn" title="Delete Assignment" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">' +
-			'<i class="fas fa-times"></i></button>' +
-			'<small><span class="grade-info"></span></small>' +
-		'</div>'
+		`<div class="grade-item">
+			<span class="grade-label">Score: &nbsp;</span>
+			<input type="number" min="0" class="score form-control input-sm" value="${score}" title="Score">
+			<span>&nbsp;/&nbsp;</span>
+			<input type="number" min="0" value="${total}" class="total form-control input-sm" tabIndex="-1" title="Total">
+			<span class="breakP">&nbsp;|&nbsp;</span>
+			<span class="grade-label">Weight: &nbsp;</span>
+			<input type="number" min="0" class="weight form-control input-sm" value="${weight}" tabIndex="-1" title="Weight (should add to 100%)">
+			<span class="breakP">&nbsp;|&nbsp;</span>
+			<span class="grade-label">Name: &nbsp;</span>
+			<input type="text" class="name form-control input-sm" value="${name}" tabIndex="-1" title="Assignment Name (optional)" placeholder="Assignment (optional)">
+			<button class="btn delete-btn" title="Delete Assignment" tabIndex="-1" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
+			<i class="fas fa-times"></i></button>
+			<small><span class="grade-info"></span></small>
+		</div>`
 	);
 }

@@ -1,0 +1,10 @@
+Assignment,Total,Weight
+Exam 1,100,20
+Assignment 1,125,20
+Final,200,60
+
+Student,Exam 1,Assignment 1,Final,Final Grade
+Adam,75,80,180,81.8
+Bob,65,95,175,80.7
+Carl,90,110,170,86.6
+Doug,85,120,155,82.7

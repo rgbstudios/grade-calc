@@ -1,3 +1,8 @@
+prioritize:
+import csv
+click to edit an individual grade, then save changes or discard
+maybe: split assignment info and student grades into 2 parts on UI
+
 fix the god-awful mobile design on this website...
 make a help button (could just take them to the readme on github)
 option for student name to not be tab-able
@@ -20,6 +25,8 @@ option to print all grade or one person's
 option to have multiple "classes" with different assignments layouts you can save
 option to use student id numbers? (nothing preventing you anyway...)
 histogram of all students' grades
+highlight the problem input upon error in red border
+checkbox to tab through all inputs not just quick tab mode
 
 
 input verification
